@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	h1.
+		MATCHES
+	table
+		each match, i in matches
+			tr
+				td= match.teams[0] + " vs " + match.teams[1]
+				td= match.date
+				td= match.result[0] + '-' + match.result[1]
+				td= match.eventName
+				td= match.region

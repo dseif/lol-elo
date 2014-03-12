@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	h1.
+		TEAMS
+	table
+		each team, i in teams 
+			tr
+				td= team.name
+				td= team.elo
