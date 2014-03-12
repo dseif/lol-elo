@@ -13,9 +13,9 @@ exports.setup = function () {
 	Match = mongoose.model('Match', matchesSchema);
 };
 
-exports.insert = function (data) {
+exports.insert = function (data, callback) {
 	var match = new Match(data);
-	match.save();
+	match.save(callback || function () {});
 };
 
 exports.find = function (query, callback) {

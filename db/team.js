@@ -15,9 +15,9 @@ exports.setup = function () {
 	Team = mongoose.model('Team', teamSchema);
 };
 
-exports.insert = function (data) {
+exports.insert = function (data, callback) {
 	var team = new Team(data);
-	team.save();
+	team.save(callback || function () {});
 };
 
 exports.find = function (query, callback) {
@@ -26,12 +26,4 @@ exports.find = function (query, callback) {
 		query = {};
 	}
 	Team.find(query, callback);
-};
-
-exports.count = function (query, callback) {
-	if (!callback && typeof query === 'function') {
-		callback = query;
-		query = {};
-	}
-	Team.count(query, callback);
 };
