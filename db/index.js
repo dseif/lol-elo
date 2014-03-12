@@ -45,10 +45,18 @@ exports.migrate = function () {
                 match.insert(matchData);
 
                 matchData.teams.forEach(function (teamName) {
+
+                    team.count({name : teamName}, function (data2)
+                {
+                    if (data2 === 0)
+                    {
                     teamData.name = teamName;
                     teamData.elo = 1200;
                     teamData.aliases = [];
                     team.insert(teamData);
+                    }   
+                });
+
                 });
             }
             numRecords++;

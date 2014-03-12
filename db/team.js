@@ -27,3 +27,11 @@ exports.find = function (query, callback) {
 	}
 	Team.find(query, callback);
 };
+
+exports.count = function (query, callback) {
+	if (!callback && typeof query === 'function') {
+		callback = query;
+		query = {};
+	}
+	Team.count(query, callback);
+};
