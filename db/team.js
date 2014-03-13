@@ -28,7 +28,7 @@ exports.find = function (query, callback) {
 };
 
 exports.updateelo = function (team, newelo, callback) {
-	Team.update({name : team}, {elo: newelo}, function (err, response){
+	Team.update({$or: [{name : team}, { aliases: { $elemMatch: { name: team } } }]}, {elo: newelo}, function (err, response){
 		callback();
 	});
 };
