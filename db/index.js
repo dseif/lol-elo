@@ -172,12 +172,13 @@ exports.calcresults = function (callback) {
                 }
             };
             
-            team.find({name: m.teams[0]}, function (err, team1){
+            ;
+            team.find({$or: [{name : m.teams[0]}, { aliases: { $elemMatch: { name: m.teams[0] } } }]}, function (err, team1){
                 team1Elo = (team1[0].elo)
                 done(team1Wins, team2Wins);
             });
 
-            team.find({name: m.teams[1]}, function (err, team2){
+            team.find({$or: [{name : m.teams[1]}, { aliases: { $elemMatch: { name: m.teams[1] } } }]}, function (err, team2){
                 team2Elo = (team2[0].elo)
                 done(team1Wins, team2Wins);
             });
