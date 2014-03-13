@@ -7,7 +7,7 @@ exports.index = function (req, res) {
 
 exports.matches = function(db) {
     return function (req, res) {
-        db.match.find(function (err, matches) {
+        db.match.findbydate(function (err, matches) {
             res.render('matches', {
                 'matches': matches
             });
@@ -17,7 +17,7 @@ exports.matches = function(db) {
 
 exports.teams = function(db) {
     return function(req, res) {
-        db.team.find(function (err, teams){
+        db.team.findbyelo(function (err, teams){
             res.render('teams', {
                 'teams': teams 
             });

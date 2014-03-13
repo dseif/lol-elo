@@ -1,5 +1,6 @@
 var db,
     fs = require('fs'),
+    async = require('async'),
     mongo = require('mongodb'),
     mongoose = require('mongoose'),
     match = require('./match'),
@@ -21,11 +22,13 @@ exports.setup = function (callback) {
 };
 
 exports.match = {
-    find: match.find
+    find: match.find,
+    findbydate : match.findbydate
 };
 
 exports.team = {
-    find: team.find
+    find: team.find,
+    findbyelo: team.findbyelo
 };
 
 exports.migrate = function () {
@@ -107,6 +110,76 @@ exports.migrate = function () {
                         numMatches++;
                     }
                 });
+            });
+        });
+    });
+};
+
+exports.loadaliases = function () {
+    fs.readFile('migrations/alias.csv', 'utf8', function(err, data) {
+        data.split('\n').forEach(function (line) {
+
+        });
+    });
+}
+
+exports.calcresults = function (callback) {
+
+    function runmatch (team1Elo, team2Elo, k, team1Wins, team2Wins, callback3) {
+        
+        var r1 = 10^(team1Elo/400),
+            r2 = 10^(team2Elo/400),
+            e1 = r1 / (r1 + r2),
+            e2 = r2 / (r1 + r2);
+
+        if (team1Wins>0) {
+            team1Elo = team1Elo + k * (1 - e1)
+            team2Elo  = team2Elo + k *(0 - e2);
+            runmatch(team1Elo, team2Elo, k, team1Wins-1, team2Wins, callback3)
+        }
+
+        else if (team2Wins>0) {
+            team1Elo = team1Elo + k * (0 - e1)
+            team2Elo = team2Elo + k *(1 - e2);
+            runmatch(team1Elo, team2Elo, k, team1Wins, team2Wins-1, callback3)
+        }
+        else {
+            callback3([team1Elo, team2Elo]);
+        }
+    }
+    
+    match.findbydate({}, function (err, data) {
+
+        async.forEachSeries(data, function (m, callback2) {
+
+            var team1Elo,
+            team2Elo,
+            k = 32,
+            team1Wins = m.result[0],
+            team2Wins = m.result[1];
+
+            function done () {
+
+                if (team1Elo && team2Elo) {
+                    //console.log (team1Wins + "\t" + team2Wins);
+
+                    runmatch(team1Elo, team2Elo, k, team1Wins, team2Wins,  function (newElos) {
+                    //console.log(m.teams[0] + "\t" + team1Elo    + "\t" + m.teams[1] + "\t" +team2Elo)
+                    //console.log(m.teams[0] + "\t" + newElos[0]  + "\t" + m.teams[1] + "\t" +newElos[1])
+                    team.updateelo(m.teams[0], newElos[0], function() {team.updateelo(m.teams[1], newElos[1], callback2)})
+                    });
+                            
+                }
+            };
+            
+            team.find({name: m.teams[0]}, function (err, team1){
+                team1Elo = (team1[0].elo)
+                done(team1Wins, team2Wins);
+            });
+
+            team.find({name: m.teams[1]}, function (err, team2){
+                team2Elo = (team2[0].elo)
+                done(team1Wins, team2Wins);
             });
         });
     });

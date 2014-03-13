@@ -25,3 +25,13 @@ exports.find = function (query, callback) {
 	}
 	Match.find(query, callback);
 };
+
+exports.findbydate = function (query, callback) {
+	if (!callback && typeof query === 'function') {
+		callback = query;
+		query = {};
+	}
+	Match.find(query)
+	.sort({date : 1})
+	.exec(callback);
+};
