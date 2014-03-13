@@ -32,8 +32,28 @@ exports.team = {
 };
 
 exports.migrate = function () {
+    var aliases = {},
+        teams = {};
+
+    function createTeam(teamName, callback) {
+        var teamData = {};
+        if (teams[teamName]) {
+            return;
+        }
+        teams[teamName] = aliases[teamName] || [];
+        teamData.name = teamName;
+        teamData.elo = 1200;
+        teamData.aliases = [];
+        teams[teamName].forEach(function (name) {
+        teamData.aliases.push({
+            name: name,
+            date: new Date(Date.now())
+            });
+        });
+        team.insert(teamData, callback);
+    }
+
     fs.readFile('migrations/alias.csv', 'utf8', function (err, data) {
-        var aliases = {};
         data.split('\n').forEach(function (line) {
             var arr = line.split(',');
             arr.forEach(function (alias, index) {
@@ -43,12 +63,14 @@ exports.migrate = function () {
                     aliases[arr[0]].push(alias);
                 }
             });
+            for (alias in aliases) {
+                createTeam(alias);
+            }
         });
         fs.readFile('migrations/testdata.csv', 'utf8', function (err, data) {
             var matchesSaved = 0,
                 numMatches = 0,
                 numTeams = 0,
-                teams = {};
                 teamsSaved = 0;
 
             function done (err, product) {
@@ -80,7 +102,6 @@ exports.migrate = function () {
 
                         matchData.teams.forEach(function (teamName) {
                             var t,
-                                teamData = {},
                                 teamExists = false;
 
                             if (teams[teamName]) {
@@ -92,19 +113,10 @@ exports.migrate = function () {
                                     }
                                 }
                             }
+
                             if (!teamExists && teamName) {
-                                teams[teamName] = aliases[teamName] || [];
-                                teamData.name = teamName;
-                                teamData.elo = 1200;
-                                teamData.aliases = [];
-                                teams[teamName].forEach(function (name) {
-                                    teamData.aliases.push({
-                                        name: name,
-                                        date: new Date(Date.now())
-                                    });
-                                });
-                                team.insert(teamData, done);
-                                numTeams++;
+                                createTeam(teamName, done);
+                                numTeams++; 
                             }
                         });
                         numMatches++;

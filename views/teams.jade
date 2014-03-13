@@ -1,12 +1,12 @@
 extends layout
 
 block content
-	h1.
-		TEAMS
-	table
-		each team, i in teams 
-			tr
-				td= team.name
-				td= team.elo
-				td= team.aliases[0]
-				td= team.aliases[1]
+    h1.
+        TEAMS
+    table
+        each team, i in teams 
+            tr
+                td= team.name
+                td= team.elo
+                each alias in team.aliases
+                    td= alias.name
