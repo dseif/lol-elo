@@ -166,9 +166,13 @@ exports.calcresults = function (callback) {
 
             var team1Elo,
             team2Elo,
-            k = 32,
+            k = 30,
             team1Wins = m.result[0],
             team2Wins = m.result[1];
+
+            if (m.region[0] === "I") {
+                k = 50;
+            }
 
             function done () {
 
