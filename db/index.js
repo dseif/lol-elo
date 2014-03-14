@@ -28,7 +28,8 @@ exports.match = {
 
 exports.team = {
     find: team.find,
-    findbyelo: team.findbyelo
+    findbyelo: team.findbyelo,
+    findvalidteams: team.findvalidteams
 };
 
 exports.migrate = function () {
@@ -137,52 +138,73 @@ exports.loadaliases = function () {
 
 exports.calcresults = function (callback) {
 
-    function runmatch (team1Elo, team2Elo, k, team1Wins, team2Wins, callback3) {
-        
-        var r1 = 10^(team1Elo/400),
-            r2 = 10^(team2Elo/400),
-            e1 = r1 / (r1 + r2),
-            e2 = r2 / (r1 + r2);
-
-        if (team1Wins>0) {
-            team1Elo = team1Elo + k * (1 - e1)
-            team2Elo  = team2Elo + k *(0 - e2);
-            runmatch(team1Elo, team2Elo, k, team1Wins-1, team2Wins, callback3)
-        }
-
-        else if (team2Wins>0) {
-            team1Elo = team1Elo + k * (0 - e1)
-            team2Elo = team2Elo + k *(1 - e2);
-            runmatch(team1Elo, team2Elo, k, team1Wins, team2Wins-1, callback3)
-        }
-        else {
-            callback3([team1Elo, team2Elo]);
-        }
-    }
     
     match.findbydate({}, function (err, data) {
 
         async.forEachSeries(data, function (m, callback2) {
 
+            function runmatch (callback3) {
+                var t1k = 32,
+                t2k = 32;
+                
+                /*if (m.region[0] === "I") {
+                t1k = 32;
+                t2k = 32;
+                }*/
+                    
+                if (team1Games < 20) {
+                        t1k = t1k*Math.pow(60/(team1Games+1), 1/2)
+                }
+
+                if (team2Games < 20) {
+                        t2k = t2k*Math.pow(60/(team2Games+1), 1/2)
+                }
+
+                var r1 = Math.pow(10, (team1Elo/400))
+                    r2 = Math.pow(10, (team2Elo/400)),
+                    e1 = r1 / (r1 + r2),
+                    e2 = r2 / (r1 + r2);
+
+                if (team1Wins>0) {
+                    team1Elo = team1Elo +t1k * (1 - e1)
+                    team2Elo = team2Elo + t2k *(0 - e2);
+                    team1Wins--;
+                    team1Games++;
+                    team2Games++;
+                    runmatch(callback3)
+                }
+
+                else if (team2Wins>0) {
+                    team1Elo = team1Elo + t1k * (0 - e1)
+                    team2Elo = team2Elo + t2k *(1 - e2);
+                    team2Wins--;
+                    team1Games++;
+                    team2Games++;
+                    runmatch(callback3)
+                }
+                else {
+                    callback3([team1Elo, team2Elo]);
+                }
+            }
+
             var team1Elo,
             team2Elo,
-            k = 30,
             team1Wins = m.result[0],
             team2Wins = m.result[1];
 
-            if (m.region[0] === "I") {
-                k = 50;
-            }
+
 
             function done () {
 
                 if (team1Elo && team2Elo) {
-                    //console.log (team1Wins + "\t" + team2Wins);
-
-                    runmatch(team1Elo, team2Elo, k, team1Wins, team2Wins,  function (newElos) {
-                    //console.log(m.teams[0] + "\t" + team1Elo    + "\t" + m.teams[1] + "\t" +team2Elo)
+                   // console.log (team1Wins + "\t" + team2Wins + "\t" + team1Games + "\t" + team2Games);
+                   // console.log(m.teams[0] + "\t" + team1Elo    + "\t" + m.teams[1] + "\t" +team2Elo)
+                    runmatch(function (newElos) {
+                    
                     //console.log(m.teams[0] + "\t" + newElos[0]  + "\t" + m.teams[1] + "\t" +newElos[1])
-                    team.updateelo(m.teams[0], newElos[0], function() {team.updateelo(m.teams[1], newElos[1], callback2)})
+                    //console.log(" ")
+                    team.updateelo(m.teams[0], newElos[0], (m.result[0] + m.result[1]), 
+                        function() {team.updateelo(m.teams[1], newElos[1], (m.result[0] + m.result[1]), callback2)})
                     });
                             
                 }
@@ -190,12 +212,14 @@ exports.calcresults = function (callback) {
             
             ;
             team.find({$or: [{name : m.teams[0]}, { aliases: { $elemMatch: { name: m.teams[0] } } }]}, function (err, team1){
-                team1Elo = (team1[0].elo)
+                team1Elo = (team1[0].elo);
+                team1Games = (team1[0].games);
                 done(team1Wins, team2Wins);
             });
 
             team.find({$or: [{name : m.teams[1]}, { aliases: { $elemMatch: { name: m.teams[1] } } }]}, function (err, team2){
-                team2Elo = (team2[0].elo)
+                team2Elo = (team2[0].elo);
+                team2Games = (team2[0].games);
                 done(team1Wins, team2Wins);
             });
         });

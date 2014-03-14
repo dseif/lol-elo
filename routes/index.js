@@ -17,7 +17,7 @@ exports.matches = function(db) {
 
 exports.teams = function(db) {
     return function(req, res) {
-        db.team.findbyelo(function (err, teams){
+        db.team.findvalidteams(function (err, teams){
             res.render('teams', {
                 'teams': teams 
             });

@@ -9,7 +9,8 @@ exports.setup = function () {
 			name: String,
 			date: Date
 		}],
-		elo: Number
+		elo: Number,
+		games: {type: Number, default: 0 }
 	});
 	Team = mongoose.model('Team', teamSchema);
 };
@@ -27,8 +28,9 @@ exports.find = function (query, callback) {
 	Team.find(query, callback);
 };
 
-exports.updateelo = function (team, newelo, callback) {
-	Team.update({$or: [{name : team}, { aliases: { $elemMatch: { name: team } } }]}, {elo: newelo}, function (err, response){
+exports.updateelo = function (team, newelo, count,  callback) {
+	Team.update({$or: [{name : team}, { aliases: { $elemMatch: { name: team } } }]}, 
+			{elo: newelo,  $inc : { games : count} }, {multi : true}, function (err, response){
 		callback();
 	});
 };
@@ -39,6 +41,16 @@ exports.findbyelo = function (query, callback) {
 		query = {};
 	}
 	Team.find(query)
+	.sort({elo : -1})
+	.exec(callback);
+};
+
+exports.findvalidteams = function (query, callback) {
+	if (!callback && typeof query === 'function') {
+		callback = query;
+		query = {};
+	}
+	Team.find({ games : { $gt: 19 } })
 	.sort({elo : -1})
 	.exec(callback);
 };
