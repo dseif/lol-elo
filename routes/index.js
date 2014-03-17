@@ -43,14 +43,11 @@ exports.team = function(db) {
             ]
         }, function (err, teams) {
             var names = []; 
-            teams.forEach(function (team) {
+            teams[0].aliases.forEach(function (team) {
                 names.push(team.name);
             });
-            if (names.length === 1 && names.indexOf(teamName) > -1) {
-                teams[0].aliases.forEach(function (team) {
-                    names.push(team.name);
-                });
-            }
+            names.push(teams[0].name);
+            console.log('wat', names, teams);
             db.match.findbydate({
                 teams: {
                     $in: names
