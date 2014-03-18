@@ -5,6 +5,7 @@ var Match,
 exports.setup = function () {
 	matchesSchema = mongoose.Schema({
 		teams: [String],
+		teamsLower: [String],
 		date: Date,
 		result: [Number],
 		eventName: String,

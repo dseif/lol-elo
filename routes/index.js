@@ -27,7 +27,7 @@ exports.teams = function(db) {
 
 exports.team = function(db) {
     return function (req, res) {
-        var teamName = req.params.id.toUpperCase();
+        var teamName = req.params.id;
         db.team.find({
             $or: [
                 {
@@ -44,12 +44,12 @@ exports.team = function(db) {
         }, function (err, teams) {
             var names = []; 
             teams[0].aliases.forEach(function (team) {
-                names.push(team.name);
+                names.push(team.name.toLowerCase());
             });
-            names.push(teams[0].name);
+            names.push(teams[0].name.toLowerCase());
             console.log('wat', names, teams);
             db.match.findbydate({
-                teams: {
+                teamsLower: {
                     $in: names
                 }
             }, function (err, matches) {

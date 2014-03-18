@@ -95,6 +95,7 @@ exports.migrate = function () {
 
                     if (arr.length > 1) {
                         matchData.teams = [arr[0], arr[1]];
+                        matchData.teamsLower = [arr[0].toLowerCase(), arr[1].toLowerCase()];
                         matchData.date = new Date(arr[2]);
                         matchData.result = arr[3].split('#');
                         matchData.eventName = arr[4];
@@ -147,17 +148,20 @@ exports.calcresults = function (callback) {
                 var t1k = 32,
                 t2k = 32;
                 
-                /*if (m.region[0] === "I") {
-                t1k = 32;
-                t2k = 32;
-                }*/
+
                     
                 if (team1Games < 20) {
                         t1k = t1k*Math.pow(60/(team1Games+1), 1/2)
                 }
+                if (m.region[0] === "I" && t1k < 64) {
+                  //  t1k = 64;
+                }
 
                 if (team2Games < 20) {
                         t2k = t2k*Math.pow(60/(team2Games+1), 1/2)
+                }
+                if (m.region[0] === "I" && t2k < 64) {
+                   // t2k = 64;
                 }
 
                 var r1 = Math.pow(10, (team1Elo/400))
@@ -197,12 +201,12 @@ exports.calcresults = function (callback) {
             function done () {
 
                 if (team1Elo && team2Elo) {
-                   // console.log (team1Wins + "\t" + team2Wins + "\t" + team1Games + "\t" + team2Games);
-                   // console.log(m.teams[0] + "\t" + team1Elo    + "\t" + m.teams[1] + "\t" +team2Elo)
+                    console.log (team1Wins + "\t" + team2Wins + "\t" + team1Games + "\t" + team2Games +"\t" + m.region[0]);
+                    console.log(m.teams[0] + "\t" + team1Elo    + "\t" + m.teams[1] + "\t" +team2Elo)
                     runmatch(function (newElos) {
                     
-                    //console.log(m.teams[0] + "\t" + newElos[0]  + "\t" + m.teams[1] + "\t" +newElos[1])
-                    //console.log(" ")
+                    console.log(m.teams[0] + "\t" + newElos[0]  + "\t" + m.teams[1] + "\t" +newElos[1])
+                    console.log(" ")
                     team.updateelo(m.teams[0], newElos[0], (m.result[0] + m.result[1]), 
                         function() {team.updateelo(m.teams[1], newElos[1], (m.result[0] + m.result[1]), callback2)})
                     });

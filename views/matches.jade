@@ -6,8 +6,11 @@ block content
 	table
 		each match, i in matches
 			tr
-				td= match.teams[0] + " vs " + match.teams[1]
-				td= match.date
+				td 
+					a(href= '/teams/' + match.teams[0]) #{match.teams[0]}
+					=' vs '
+					a(href= '/teams/' + match.teams[1]) #{match.teams[1]} 
+				td #{match.date.toDateString()}
 				td= match.result[0] + '-' + match.result[1]
 				td= match.eventName
 				td= match.region

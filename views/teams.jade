@@ -1,12 +1,12 @@
 extends layout
-
 block content
     h1.
         TEAMS
     table
         each team, i in teams 
             tr
-                td= team.name
+                td
+                    a(href= '/teams/' + team.name) #{team.name}
                 td= team.elo
                 td= team.games
                 each alias in team.aliases
