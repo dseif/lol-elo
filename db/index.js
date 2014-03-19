@@ -4,6 +4,7 @@ var db,
     mongo = require('mongodb'),
     mongoose = require('mongoose'),
     match = require('./match'),
+    result = require('./result'),
     team = require('./team');
 
 // Setup db connection and all that gay shit
@@ -30,6 +31,11 @@ exports.team = {
     find: team.find,
     findbyelo: team.findbyelo,
     findvalidteams: team.findvalidteams
+};
+
+exports.result = {
+    find: result.find,
+    findbydate: result.findbydata
 };
 
 exports.migrate = function () {
