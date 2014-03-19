@@ -139,7 +139,6 @@ exports.loadaliases = function () {
 
 exports.calcresults = function (callback) {
 
-    
     match.findbydate({}, function (err, data) {
 
         async.forEachSeries(data, function (m, callback2) {
@@ -147,8 +146,6 @@ exports.calcresults = function (callback) {
             function runmatch (callback3) {
                 var t1k = 32,
                 t2k = 32;
-                
-
                     
                 if (team1Games < 20) {
                         t1k = t1k*Math.pow(60/(team1Games+1), 1/2)
@@ -195,8 +192,6 @@ exports.calcresults = function (callback) {
             team2Elo,
             team1Wins = m.result[0],
             team2Wins = m.result[1];
-
-
 
             function done () {
 
