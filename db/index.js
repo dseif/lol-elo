@@ -151,14 +151,14 @@ exports.calcresults = function (callback) {
                         t1k = t1k*Math.pow(60/(team1Games+1), 1/2)
                 }
                 if (m.region[0] === "I" && t1k < 64) {
-                  //  t1k = 64;
+                     t1k = 64;
                 }
 
                 if (team2Games < 20) {
                         t2k = t2k*Math.pow(60/(team2Games+1), 1/2)
                 }
                 if (m.region[0] === "I" && t2k < 64) {
-                   // t2k = 64;
+                    t2k = 64;
                 }
 
                 var r1 = Math.pow(10, (team1Elo/400))
@@ -166,7 +166,7 @@ exports.calcresults = function (callback) {
                     e1 = r1 / (r1 + r2),
                     e2 = r2 / (r1 + r2);
 
-                if (team1Wins>0) {
+                if (team1Wins>0 && (team1Wins < team2Wins || team2Wins === 0)) {
                     team1Elo = team1Elo +t1k * (1 - e1)
                     team2Elo = team2Elo + t2k *(0 - e2);
                     team1Wins--;
