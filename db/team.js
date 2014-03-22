@@ -50,7 +50,7 @@ exports.findvalidteams = function (query, callback) {
 		callback = query;
 		query = {};
 	}
-	Team.find({ games : { $gt: 19 } })
+	Team.find({ games : { $gt: 0 } })
 	.sort({elo : -1})
 	.exec(callback);
 };

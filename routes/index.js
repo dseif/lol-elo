@@ -1,8 +1,14 @@
-
-exports.index = function (req, res) {
-    res.render('index', {
-        title: 'Express'
-    });
+exports.index = function(db) {
+    return function(req, res) {
+        db.result.findbydate(function (err, results) {
+            db.team.findvalidteams(function (err, teams){
+                res.render('index', {
+                    'teams': teams.slice(0,15),
+                    'results' : results.slice(results.length-10,results.length).reverse()
+                });
+            });
+        });
+    };
 };
 
 exports.matches = function(db) {
@@ -14,6 +20,17 @@ exports.matches = function(db) {
         });
     };
 };
+
+exports.results = function(db) {
+    return function (req, res) {
+        db.result.findbydate(function (err, results) {
+            res.render('results', {
+                'results': results
+            });
+        });
+    };
+};
+
 
 exports.teams = function(db) {
     return function(req, res) {

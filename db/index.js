@@ -16,6 +16,7 @@ exports.setup = function (callback) {
     db.once('open', function () {
         match.setup();
         team.setup();
+        result.setup();
         if (callback && typeof callback === 'function') {
             callback();
         }
@@ -35,7 +36,7 @@ exports.team = {
 
 exports.result = {
     find: result.find,
-    findbydate: result.findbydata
+    findbydate: result.findbydate
 };
 
 exports.migrate = function () {
@@ -155,6 +156,7 @@ exports.calcresults = function (callback) {
                     
                 if (team1Games < 20) {
                         t1k = t1k*Math.pow(60/(team1Games+1), 1/2)
+
                 }
                 if (m.region[0] === "I" && t1k < 64) {
                      t1k = 64;
@@ -162,6 +164,7 @@ exports.calcresults = function (callback) {
 
                 if (team2Games < 20) {
                         t2k = t2k*Math.pow(60/(team2Games+1), 1/2)
+
                 }
                 if (m.region[0] === "I" && t2k < 64) {
                     t2k = 64;
@@ -202,12 +205,27 @@ exports.calcresults = function (callback) {
             function done () {
 
                 if (team1Elo && team2Elo) {
+                    
+                    resultData = {};
+                    resultData.teams = m.teams;
+                    resultData.teamsLower = m.teamsLower;
+                    resultData.date = m.date;
+                    resultData.result = m.result;
+                    resultData.games = m.games;
+                    resultData.eventName = m.eventName;
+                    resultData.region = m.region;
+                    resultData.eloBefore = [team1Elo, team2Elo];
+
                     console.log (team1Wins + "\t" + team2Wins + "\t" + team1Games + "\t" + team2Games +"\t" + m.region[0]);
                     console.log(m.teams[0] + "\t" + team1Elo    + "\t" + m.teams[1] + "\t" +team2Elo)
                     runmatch(function (newElos) {
-                    
+
+                    resultData.eloAfter = [newElos[0], newElos[1]];
+                    result.insert(resultData);
+
                     console.log(m.teams[0] + "\t" + newElos[0]  + "\t" + m.teams[1] + "\t" +newElos[1])
                     console.log(" ")
+
                     team.updateelo(m.teams[0], newElos[0], (m.result[0] + m.result[1]), 
                         function() {team.updateelo(m.teams[1], newElos[1], (m.result[0] + m.result[1]), callback2)})
                     });
@@ -232,7 +250,7 @@ exports.calcresults = function (callback) {
 };
 
 exports.destroy = function () {
-    ['matches', 'teams'].forEach(function (collection) {
+    ['matches', 'teams', 'results'].forEach(function (collection) {
         mongoose.connection.collections[collection].drop();
     });
     process.exit();

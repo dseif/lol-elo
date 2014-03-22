@@ -1,8 +1,33 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 	padding: 50px;
+ 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 	background-color: #0B0B0B;
+ 	color: #E5E5E5;
 }
 
 a {
-  color: #00B7FF;
+
+	color: #E5E5E5;
 }
+
+#wrapper
+	{
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+#menu ul
+	{
+		list-style-type: none;
+		font-size: 20px;
+		padding: 0px;
+	}
+
+#menu ul li { 
+	display: inline;
+	padding-right: 55px;
+}
+
+#menu ul a 	{text-decoration: none;}
+
+#menu ul li a:hover {color: white};

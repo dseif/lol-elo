@@ -8,6 +8,9 @@ exports.setup = function () {
 		teamsLower: [String],
 		date: Date,
 		result: [Number],
+		eloBefore: [Number],
+		eloAfter: [Number],
+		games: [Number],
 		eventName: String,
 		region: String
 	});
