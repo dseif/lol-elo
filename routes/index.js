@@ -3,7 +3,7 @@ exports.index = function(db) {
         db.result.findbydate(function (err, results) {
             db.team.findvalidteams(function (err, teams){
                 res.render('index', {
-                    'teams': teams.slice(0,15),
+                    'teams': teams.slice(0,12),
                     'results' : results.slice(results.length-10,results.length).reverse()
                 });
             });

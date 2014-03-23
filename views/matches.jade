@@ -1,61 +1,58 @@
 extends layout
 
 block content
-	h1
-		a( href= '/matches/') Matches
-		=' > '
-		if teamNames
-			=teamNames[0]
-		if eventId
-			=eventId
-	h1
-		a( href= '/teams/') Top Teams
-
-	table
-		each match, i in matches
-			tr
-				td
-					
-					if (teamNames && teamNames.indexOf(match.teams[1]) !== -1)
-						a(href= '/teams/' + match.teams[1]) #{match.teams[1]}
-						=' vs '
-						a(href= '/teams/' + match.teams[0]) #{match.teams[0]} 
-					else
-						a(href= '/teams/' + match.teams[0]) #{match.teams[0]}
-						=' vs '
-						a(href= '/teams/' + match.teams[1]) #{match.teams[1]} 						
-					if (teamNames && teamNames.indexOf(match.teams[0]) !== -1)
-						if (match.result[0] > match.result[1]) 
-							td= 'WIN'
-						else if (match.result[0] < match.result[1])
-							td= 'LOSS'
+	include header
+	div#wrapper
+		h1
+			if teamNames
+				=teamNames[0]
+			if eventId
+				=eventId
+		table
+			each match, i in matches
+				tr
+					td
+						
+						if (teamNames && teamNames.indexOf(match.teams[1]) !== -1)
+							a(href= '/teams/' + match.teams[1]) #{match.teams[1]}
+							=' vs '
+							a(href= '/teams/' + match.teams[0]) #{match.teams[0]} 
 						else
-							td= 'TIE'
-					else if (teamNames && teamNames.indexOf(match.teams[1]) !== -1)
-						if (match.result[0] < match.result[1]) 
-							td= 'WIN'
-						else if (match.result[0] > match.result[1])
-							td= 'LOSS'
-						else 
-							td= 'TIE'
-				td
-					if (teamNames && teamNames.indexOf(match.teams[1]) !== -1)
-						=match.result[1] + '-' + match.result[0]
-					else
-						=match.result[0] + '-' + match.result[1]
-				td #{match.date.toDateString()}
-				td
-					a(href= '/events/' + match.eventName) #{match.eventName}
-				td
-					case match.region[0]
-						when 'N'
-							='Na'
-						when 'I'
-							='Int'
-						when 'E'
-							='Eu'
-						when 'A'
-							='As'
-						when 'K'
-							='Kr'
+							a(href= '/teams/' + match.teams[0]) #{match.teams[0]}
+							=' vs '
+							a(href= '/teams/' + match.teams[1]) #{match.teams[1]} 						
+						if (teamNames && teamNames.indexOf(match.teams[0]) !== -1)
+							if (match.result[0] > match.result[1]) 
+								td= 'WIN'
+							else if (match.result[0] < match.result[1])
+								td= 'LOSS'
+							else
+								td= 'TIE'
+						else if (teamNames && teamNames.indexOf(match.teams[1]) !== -1)
+							if (match.result[0] < match.result[1]) 
+								td= 'WIN'
+							else if (match.result[0] > match.result[1])
+								td= 'LOSS'
+							else 
+								td= 'TIE'
+					td
+						if (teamNames && teamNames.indexOf(match.teams[1]) !== -1)
+							=match.result[1] + '-' + match.result[0]
+						else
+							=match.result[0] + '-' + match.result[1]
+					td #{match.date.toDateString()}
+					td
+						a(href= '/events/' + match.eventName) #{match.eventName}
+					td
+						case match.region[0]
+							when 'N'
+								='Na'
+							when 'I'
+								='Int'
+							when 'E'
+								='Eu'
+							when 'A'
+								='As'
+							when 'K'
+								='Kr'
 

@@ -1,14 +1,14 @@
 extends layout
 block content
-    h1.
-        TEAMS
-    table
-        each team, i in teams 
-            tr
-                td= team.games
-                td
-                    a(href= '/teams/' + team.name) #{team.name}
-                td= Math.round(team.elo)
+    include header
+    div#wrapper
+        table
+            each team, i in teams 
+                tr
+                    td= team.games
+                    td
+                        a(href= '/teams/' + team.name) #{team.name}
+                    td= Math.round(team.elo)
 
-                each alias in team.aliases
-                    td= alias.name
+                    each alias in team.aliases
+                        td= alias.name

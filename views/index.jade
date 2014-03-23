@@ -1,41 +1,49 @@
 extends layout
-
 block content
-	div(id="wrapper")
-		div(id="header")
-			img(src = '/img/t1.png')
-		div(id="menu")
-			ul
-				li 
-					a( href= '/') INDEX
-				li 
-					a( href= '/teams/') TEAMS
-				li
-					a( href= '/matches/') MATCHES
-				li 
-					a( href= '/results/') RESULTS
-		div(id="teamslarge")
+	include header
+	div#wrapper
+		div#teamlist.contentlarge
+			div.contentlargeheader
+				h1 CURRENT RANKINGS
 			table
+				tr
+					th='RANK'
+					th.teamname='NAME'
+					th='ELO'
+					th='DELTA'
+					th='REGION'
+					th='COL SIX'
 				each team, i in teams
 					tr
-						td=i+1
-						td
+						td.blue=i+1
+						td.teamname
 							a(href= '/teams/' + team.name) #{team.name}
 						td= Math.round(team.elo)
-		table
-			each result, i in results
-				tr
-					td
-						
+						td.green='+1'
+						td='Kr'
+						td
+		div#teamlist.contentlarge
+			div#feature
+		div#teamlist.contentlarge
+			div.contentlargeheader
+				h1 RECENT MATCHES
+			table
+				each result, i in results
+					tr
 						if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-							a(href= '/teams/' + result.teams[1]) #{result.teams[1]}
-							=' vsaa '
-							a(href= '/teams/' + result.teams[0]) #{result.teams[0]} 
+							td
+								a(href= '/teams/' + result.teams[1]) #{result.teams[1]}
+							td=' vs. '
+							td
+								a(href= '/teams/' + result.teams[0]) #{result.teams[0]} 
 						else
-							a(href= '/teams/' + result.teams[0]) #{result.teams[0]}
-							=' vsaa '
-							=Math.round(result.eloBefore[1])
-							a(href= '/teams/' + result.teams[1]) #{result.teams[1]} 						
+							td=Math.round(result.eloBefore[0])
+							td
+								a(href= '/teams/' + result.teams[0]) #{result.teams[0]}
+							td=' vs. '
+							td=Math.round(result.eloBefore[1])
+							td
+								a(href= '/teams/' + result.teams[1]) #{result.teams[1]} 						
 						if (teamNames && teamNames.indexOf(result.teams[0]) !== -1)
 							if (result.result[0] > result.result[1]) 
 								td= 'WIN'
@@ -50,23 +58,23 @@ block content
 								td= 'LOSS'
 							else 
 								td= 'TIE'
-					td
-						if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-							=result.result[1] + '-' + result.result[0]
-						else
-							=result.result[0] + '-' + result.result[1]
-					td #{result.date.toDateString()}
-					td
-						a(href= '/events/' + result.eventName) #{result.eventName}
-					td
-						case result.region[0]
-							when 'N'
-								='Na'
-							when 'I'
-								='Int'
-							when 'E'
-								='Eu'
-							when 'A'
-								='As'
-							when 'K'
-								='Kr'
+						td
+							if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
+								=result.result[1] + '-' + result.result[0]
+							else
+								=result.result[0] + '-' + result.result[1]
+						td #{result.date.toDateString()}
+						td
+							a(href= '/events/' + result.eventName) #{result.eventName}
+						td
+							case result.region[0]
+								when 'N'
+									='Na'
+								when 'I'
+									='Int'
+								when 'E'
+									='Eu'
+								when 'A'
+									='As'
+								when 'K'
+									='Kr'

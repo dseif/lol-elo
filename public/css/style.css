@@ -1,7 +1,8 @@
 body {
- 	padding: 50px;
- 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
- 	background-color: #0B0B0B;
+ 	padding: 0;
+ 	margin: 0;
+ 	font: 15px "Raleway", sans-serif;
+	background-color: #0B0B0B;
  	color: #E5E5E5;
 }
 
@@ -10,24 +11,140 @@ a {
 	color: #E5E5E5;
 }
 
+#topmenu
+	{
+		height:35px;
+		background-color: #000000;
+
+	}
+
 #wrapper
 	{
 		width: 1000px;
 		margin: 0 auto;
 	}
 
+
+#header
+	{
+		height: 77px;
+		background-image:url("/img/t1.png");
+		background-repeat:no-repeat;
+		background-position: left center;
+		
+	}
+
+
+
+#menu
+	{
+		height: 47px;
+		background-image:url("/img/mbg1.png");
+		background-repeat: repeat-x;
+		margin: 0 0 ;
+		padding: 0 0;
+	}
 #menu ul
 	{
 		list-style-type: none;
 		font-size: 20px;
-		padding: 0px;
+		padding-right: 470px;
+		padding-left: 6px;
+		text-align: center;
+		margin: 0 0 ;
 	}
 
 #menu ul li { 
 	display: inline;
 	padding-right: 55px;
+	line-height: 47px;
 }
 
-#menu ul a 	{text-decoration: none;}
+#menu ul li a 	{
+	text-decoration: none;
+	color: #E7E7E7;
+}
 
-#menu ul li a:hover {color: white};
+#menu ul li a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+.contentlarge
+{
+	margin-top: 21px;
+	float: left;
+	width: 760px;
+}
+
+.contentlargeheader
+{
+	background-color: #0073C6;
+	height: 30px;
+	color: white;
+
+}
+.contentlargeheader h1 {
+	font-size: 16px;
+	line-height: 30px; 
+	padding-left: 6px;
+	font-weight:500;
+	margin: 0;
+}
+
+
+#teamlist table
+{
+	width: 100%;
+}
+#teamlist th
+{
+
+	color: #B38900;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+td
+{
+	text-align: center;
+}
+#teamlist .teamname
+{
+	text-align: left;
+	padding-left: 20px;
+}
+
+#teamlist .teamname a:hover
+{
+	color: #018FFD;
+	text-decoration: underline;
+
+}
+#teamlist .teamname a
+{
+	text-decoration:none;
+
+}
+#teamlist .blue
+{
+	color: #018FFD;
+}
+
+#teamlist .green
+{
+	color: #1A8302;
+}
+
+
+tr:nth-child(even) td{
+	background-color: #131313;
+}
+
+#feature
+{
+	width: 100%;
+	height:299px;
+	width:460px;
+	background-image:url("/img/ft1.png");
+}
