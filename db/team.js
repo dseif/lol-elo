@@ -10,6 +10,7 @@ exports.setup = function () {
 			date: Date
 		}],
 		elo: Number,
+		logo: String,
 		games: {type: Number, default: 0 }
 	});
 	Team = mongoose.model('Team', teamSchema);

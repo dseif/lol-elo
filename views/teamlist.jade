@@ -15,8 +15,9 @@ div#teamlist.contentlarge
 				td(style="width:40px;").green='+1'
 				td(style="width:30px;").blue=i+1	
 				td(style="width:38px;")
-					a(href= '/teams/' + team.name)
-						img(src= '/img/lgs/lgs-' + team.name.replace(/ /g, "-") + '.png')
+					if (team.logo !== "None")
+						a(href= '/teams/' + team.name)
+							img(src= '/img/lgs/lgs-'+ team.logo + '.png')
 				td.teamname
 					a(href= '/teams/' + team.name) #{team.name}
 				td(style="width: 50px;")= Math.round(team.elo)

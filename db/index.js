@@ -52,13 +52,23 @@ exports.migrate = function () {
         teamData.name = teamName;
         teamData.elo = 1200;
         teamData.aliases = [];
-        teams[teamName].forEach(function (name) {
-        teamData.aliases.push({
-            name: name,
-            date: new Date(Date.now())
+        fs.exists('public/img/lgs/lgs-' + teamName.replace(/ /g, "-") + '.png', function(exists) {
+            if (exists) {
+                teamData.logo = teamName.replace(/ /g, "-");
+            }
+            else
+            {
+                teamData.logo = 'None';    
+            }
+            teams[teamName].forEach(function (name) {
+                teamData.aliases.push({
+                name: name,
+                date: new Date(Date.now())
+                });
             });
-        });
+
         team.insert(teamData, callback);
+        });
     }
 
     fs.readFile('migrations/alias.csv', 'utf8', function (err, data) {
