@@ -12,6 +12,12 @@ block content
 						h1
 							if eventId
 								=eventId
+								- var count = 0
+								- var elosum = 0
+								each result, i in results
+									- count += 2
+									- elosum +=  result.eloBefore[0] + result.eloBefore[1]
+								='- Avg ELO - ' + Math.round(elosum/count)
 						div.contentlargeheader
 							h1 RESULTS
 						+matchlist(results)

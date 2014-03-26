@@ -4,21 +4,21 @@ LGD,PE,1/15/2013,0#2,Starwars 2 Groups,I
 SKT T1 1,AG,1/15/2013,0#2,Starwars 2 Groups,I
 Royal,SG Ozone,1/15/2013,1#1,Starwars 2 Groups,I
 WE,iG,1/15/2013,1#1,Starwars 2 Groups,I
-Gambit,CJ Blaze,1/18/2013,0#1,IEM Season 7 Katowice,I
-Gambit,Crs,1/18/2013,0#1,IEM Season 7 Katowice,I
-MYM,CJ Blaze,1/18/2013,0#1,IEM Season 7 Katowice,I
-MYM,Crs,1/18/2013,1#0,IEM Season 7 Katowice,I
-Gambit,MYM,1/18/2013,1#0,IEM Season 7 Katowice,I
-CJ Blaze,Crs,1/18/2013,1#0,IEM Season 7 Katowice,I
-SK,CJ Frost,1/19/2013,0#1,IEM Season 7 Katowice,I
-Fnatic,CJ Frost,1/19/2013,0#1,IEM Season 7 Katowice,I
-SK,Fnatic,1/19/2013,0#1,Starwars 2 Groups,I
-aL,CJ Frost,1/19/2013,0#1,IEM Season 7 Katowice,I
-Fnatic,aL,1/19/2013,1#0,IEM Season 7 Katowice,I
-SK,aL,1/19/2013,1#0,IEM Season 7 Katowice,I
-CJ Blaze,Gambit,1/20/2013,0#2,IEM Season 7 Katowice,I
-Gambit,CJ Frost,1/20/2013,2#0,IEM Season 7 Katowice,I
-CJ Blaze,Fnatic,1/20/2013,2#1,IEM Season 7 Katowice,I
+Gambit,AZB,1/18/2013#1,0#1,IEM Season 7 Katowice,I
+Gambit,Crs,1/18/2013#3,0#1,IEM Season 7 Katowice,I
+MYM,AZB,1/18/2013#4,0#1,IEM Season 7 Katowice,I
+MYM,Crs,1/18/2013#2,1#0,IEM Season 7 Katowice,I
+Gambit,MYM,1/18/2013#5,1#0,IEM Season 7 Katowice,I
+AZB,Crs,1/18/2013#6,1#0,IEM Season 7 Katowice,I
+SK,AZF,1/19/2013#1,0#1,IEM Season 7 Katowice,I
+Fnatic,AZF,1/19/2013#4,0#1,IEM Season 7 Katowice,I
+SK,Fnatic,1/19/2013#5,0#1,Starwars 2 Groups,I
+aL,AZF,1/19/2013#6,0#1,IEM Season 7 Katowice,I
+Fnatic,aL,1/19/2013#2,1#0,IEM Season 7 Katowice,I
+SK,aL,1/19/2013#3,1#0,IEM Season 7 Katowice,I
+AZB,Gambit,1/20/2013#3,0#2,IEM Season 7 Katowice,I
+Gambit,AZF,1/20/2013#2,2#0,IEM Season 7 Katowice,I
+AZB,Fnatic,1/20/2013#1,2#1,IEM Season 7 Katowice,I
 PE,TPA,1/22/2013,0#2,Starwars 2 Groups,I
 TPS,iG,1/22/2013,1#1,Starwars 2 Groups,I
 SG Ozone,LGD,1/22/2013,2#0,Starwars 2 Groups,I
@@ -27,21 +27,21 @@ SKT T1 1,WE,1/29/2013,0#2,Starwars 2 Groups,I
 TPS,WE,1/29/2013,0#2,Starwars 2 Groups,I
 PE,SG Ozone,1/29/2013,2#0,Starwars 2 Groups,I
 TPA,Royal,1/29/2013,2#0,Starwars 2 Groups,I
-paiN,MYM,1/31/2013,0#1,IEM Season 7 Sao Paulo,I
-neXi,MYM,1/31/2013,0#1,IEM Season 7 Sao Paulo,I
-paiN,M1,1/31/2013,0#1,IEM Season 7 Sao Paulo,I
-paiN,neXi,1/31/2013,1#0,IEM Season 7 Sao Paulo,I
-M1,MYM,1/31/2013,1#0,IEM Season 7 Sao Paulo,I
-M1,neXi,1/31/2013,1#0,IEM Season 7 Sao Paulo,I
-IM,Keyd,2/1/2013,0#1,IEM Season 7 Sao Paulo,I
-Insight,Anexis,2/1/2013,0#1,IEM Season 7 Sao Paulo,I
-Insight,IM,2/1/2013,0#1,IEM Season 7 Sao Paulo,I
-Keyd,Anexis,2/1/2013,0#1,IEM Season 7 Sao Paulo,I
-Insight,Keyd,2/1/2013,1#0,IEM Season 7 Sao Paulo,I
-IM,Anexis,2/1/2013,1#0,IEM Season 7 Sao Paulo,I
-Anexis,IM,2/2/2013,0#2,IEM Season 7 Sao Paulo,I
-M1,Anexis,2/2/2013,1#2,IEM Season 7 Sao Paulo,I
-IM,MYM,2/2/2013,2#0,IEM Season 7 Sao Paulo,I
+paiN,MYM,1/31/2013#4,0#1,IEM Season 7 Sao Paulo,I
+neXi,MYM,1/31/2013#5,0#1,IEM Season 7 Sao Paulo,I
+paiN,M1,1/31/2013#6,0#1,IEM Season 7 Sao Paulo,I
+paiN,neXi,1/31/2013#1,1#0,IEM Season 7 Sao Paulo,I
+M1,MYM,1/31/2013#2,1#0,IEM Season 7 Sao Paulo,I
+M1,neXi,1/31/2013#3,1#0,IEM Season 7 Sao Paulo,I
+IM,Keyd,2/1/2013#3,0#1,IEM Season 7 Sao Paulo,I
+Insight,Anexis,2/1/2013#4,0#1,IEM Season 7 Sao Paulo,I
+Insight,IM,2/1/2013#5,0#1,IEM Season 7 Sao Paulo,I
+Keyd,Anexis,2/1/2013#6,0#1,IEM Season 7 Sao Paulo,I
+Insight,Keyd,2/1/2013#1,1#0,IEM Season 7 Sao Paulo,I
+IM,Anexis,2/1/2013#2,1#0,IEM Season 7 Sao Paulo,I
+Anexis,IM,2/2/2013#3,0#2,IEM Season 7 Sao Paulo,I
+M1,Anexis,2/2/2013#1,1#2,IEM Season 7 Sao Paulo,I
+IM,MYM,2/2/2013#2,2#0,IEM Season 7 Sao Paulo,I
 TSM,CLG,2/7/2013,0#1,NA LCS Spring 2013,N
 CLG,GGU,2/7/2013,1#0,NA LCS Spring 2013,N
 Crs,d,2/7/2013,1#0,NA LCS Spring 2013,N
@@ -167,11 +167,11 @@ EG,Anexis,3/7/2013,1#0,IEM Season 7 World Championship,I
 MYM,EG,3/7/2013,1#0,IEM Season 7 World Championship,I
 SKT T1 1,MYM,3/7/2013,1#0,IEM Season 7 World Championship,I
 SKT T1 1,SK,3/7/2013,1#0,IEM Season 7 World Championship,I
-Gambit,CJ Frost,3/8/2013,1#2,IEM Season 7 World Championship,I
-CJ Blaze,Anexis,3/8/2013,2#0,IEM Season 7 World Championship,I
-CJ Frost,M1,3/8/2013,2#0,IEM Season 7 World Championship,I
-SKT T1 1,CJ Blaze,3/9/2013,0#2,IEM Season 7 World Championship,I
-CJ Frost,CJ Blaze,3/9/2013,1#3,IEM Season 7 World Championship,I
+Gambit,CJ Frost,3/8/2013#3,1#2,IEM Season 7 World Championship,I
+CJ Blaze,Anexis,3/8/2013#2,2#0,IEM Season 7 World Championship,I
+CJ Frost,M1,3/8/2013#1,2#0,IEM Season 7 World Championship,I
+SKT T1 1,CJ Blaze,3/9/2013#1,0#2,IEM Season 7 World Championship,I
+CJ Frost,CJ Blaze,3/9/2013#2,1#3,IEM Season 7 World Championship,I
 LGD,NJBS,3/12/2013,0#2,Starwars 2 Groups,I
 NJWS,AG,3/12/2013,2#0,Starwars 2 Groups,I
 NJBS,PE,3/12/2013,2#0,Starwars 2 Groups,I
@@ -481,9 +481,9 @@ iG,Spider,5/18/2013,1#0,LPL Spring 2013,C
 Royal,TPA,5/18/2013,1#0,NVIDIA Game Festival 2013,I
 ahq,MLE,5/19/2013,1#0,GPL Summer 2013,A
 SF5,KLH,5/19/2013,1#0,GPL Summer 2013,A
-Royal,WE,5/19/2013,0#2,NVIDIA Game Festival 2013,I
-WE,OMG,5/19/2013,1#0,NVIDIA Game Festival 2013,I
-TPA,OMG,5/19/2013,2#1,NVIDIA Game Festival 2013,I
+Royal,WE,5/19/2013#3,0#2,NVIDIA Game Festival 2013,I
+WE,OMG,5/19/2013#1,1#0,NVIDIA Game Festival 2013,I
+TPA,OMG,5/19/2013#2,2#1,NVIDIA Game Festival 2013,I
 SKT T1 2,MVP O,5/29/2013,1#3,OGN Spring 2013,K
 BKT,TPA,5/31/2013,0#1,GPL Summer 2013,A
 SAJ,MLE,5/31/2013,1#0,GPL Summer 2013,A
@@ -548,9 +548,9 @@ MYM,SK,6/15/2013,1#0,EU LCS Summer 2013,E
 aTn,EG,6/15/2013,1#0,EU LCS Summer 2013,E
 Fnatic,SK,6/15/2013,1#0,EU LCS Summer 2013,E
 MYM,NiP,6/15/2013,1#0,EU LCS Summer 2013,E
-Gamania,Storm,6/15/2013,0#2,World GameMaster Tournament 2013,I
-CC,Gamania,6/15/2013,0#2,World GameMaster Tournament 2013,I
-WE Acad,CC,6/15/2013,2#1,World GameMaster Tournament 2013,I
+Gamania,Storm,6/15/2013#1,0#2,World GameMaster Tournament 2013,I
+CC,Gamania,6/15/2013#3,0#2,World GameMaster Tournament 2013,I
+WE Acad,CC,6/15/2013#2,2#1,World GameMaster Tournament 2013,I
 MVP O,CJ Blaze,6/15/2013,3#0,OGN Spring 2013,K
 SAJ,BKT,6/16/2013,0#1,GPL Summer 2013,A
 SGS,SF5,6/16/2013,1#0,GPL Summer 2013,A
@@ -566,9 +566,9 @@ EG,Fnatic,6/16/2013,1#0,EU LCS Summer 2013,E
 aTn,NiP,6/16/2013,1#0,EU LCS Summer 2013,E
 MYM,Fnatic,6/16/2013,1#0,EU LCS Summer 2013,E
 Gambit,LD,6/16/2013,1#0,EU LCS Summer 2013,E
-WE Acad,Storm,6/16/2013,1#2,World GameMaster Tournament 2013,I
-WE Acad,Gamania,6/16/2013,1#2,World GameMaster Tournament 2013,I
-Storm,Gamania,6/16/2013,2#1,World GameMaster Tournament 2013,I
+WE Acad,Storm,6/16/2013#4,1#2,World GameMaster Tournament 2013,I
+WE Acad,Gamania,6/16/2013#5,1#2,World GameMaster Tournament 2013,I
+Storm,Gamania,6/16/2013#6,2#1,World GameMaster Tournament 2013,I
 Fnatic,NiP,6/17/2013,0#1,EU LCS Summer 2013,E
 MYM,aTn,6/17/2013,0#1,EU LCS Summer 2013,E
 SK,EG,6/17/2013,1#0,EU LCS Summer 2013,E
@@ -658,9 +658,9 @@ Gambit,NiP,6/30/2013,0#1,EU LCS Summer 2013,E
 EG,aTn,6/30/2013,0#1,EU LCS Summer 2013,E
 SK,Fnatic,6/30/2013,1#0,EU LCS Summer 2013,E
 MYM,LD,6/30/2013,1#0,EU LCS Summer 2013,E
-SAJ,TPS,6/30/2013,0#1,Asian Indoor Martial Arts Games 2013,I
-KT Bullets,SAJ,6/30/2013,2#0,Asian Indoor Martial Arts Games 2013,I
-WE,TPS,6/30/2013,2#0,Asian Indoor Martial Arts Games 2013,I
+SAJ,TPS,6/30/2013#1,0#1,Asian Indoor Martial Arts Games 2013,I
+KT Bullets,SAJ,6/30/2013#2,2#0,Asian Indoor Martial Arts Games 2013,I
+WE,TPS,6/30/2013#3,2#0,Asian Indoor Martial Arts Games 2013,I
 C,VES,6/30/2013,1#0,NA LCS Summer 2013,N
 CLG,TSM,6/30/2013,1#0,NA LCS Summer 2013,N
 Crs,C,6/30/2013,1#0,NA LCS Summer 2013,N
@@ -851,8 +851,8 @@ TSM,V,7/25/2013,1#0,NA LCS Summer 2013,N
 SF5,TPA,7/26/2013,0#1,GPL Summer 2013,A
 ahq,KLH,7/26/2013,1#0,GPL Summer 2013,A
 MLE,BKT,7/26/2013,1#0,GPL Summer 2013,A
-iG,WE,7/26/2013,0#2,IEM Season 8 Shanghai,C
-OMG,WE,7/26/2013,1#2,IEM Season 8 Shanghai,C
+iG,WE,7/26/2013#2,0#2,IEM Season 8 Shanghai,C
+OMG,WE,7/26/2013#1,1#2,IEM Season 8 Shanghai,C
 Blast,Falcons,7/26/2013,0#2,OGN Summer 2013,K
 CTU,CJ Blaze,7/26/2013,1#1,OGN Summer 2013,K
 Crs,d,7/26/2013,0#1,NA LCS Summer 2013,N
@@ -1069,9 +1069,9 @@ OMG,LMQ,8/30/2013,1#0,LPL Summer 2013,C
 Royal,WE,8/30/2013,1#0,LPL Summer 2013,C
 Crs,d,8/30/2013,1#2,NA LCS Summer 2013 Playoffs,N
 TSM,CLG,8/30/2013,2#0,NA LCS Summer 2013 Playoffs,N
-iSE,Gamania,8/31/2013,0#2,Hong Kong Esports Tournament Brackets,A
-Gamania,ahq,8/31/2013,2#0,Hong Kong Esports Tournament Brackets,A
-iSE,HKA,8/31/2013,2#1,Hong Kong Esports Tournament Brackets,A
+iSE,Gamania,8/31/2013#3,0#2,Hong Kong Esports Tournament Brackets,A
+Gamania,ahq,8/31/2013#2,2#0,Hong Kong Esports Tournament Brackets,A
+iSE,HKA,8/31/2013#1,2#1,Hong Kong Esports Tournament Brackets,A
 iG,Royal,8/31/2013,0#1,LPL Summer 2013,C
 YG,OMG,8/31/2013,0#1,LPL Summer 2013,C
 PE,EP.HK,8/31/2013,1#0,LPL Summer 2013,C
@@ -1089,13 +1089,13 @@ V,d,9/1/2013,2#0,NA LCS Summer 2013 Playoffs,N
 KT Bullets,CJ Frost,9/4/2013,1#2,Season 3 Korea Regional Finals,K
 KT Bullets,CJ Blaze,9/5/2013,3#0,Season 3 Korea Regional Finals,K
 CJ Frost,KT Bullets,9/6/2013,0#3,Season 3 Korea Regional Finals,K
-OMG,iG,9/7/2013,2#0,Season 3 China Regional Finals,C
-Royal,PE,9/7/2013,2#0,Season 3 China Regional Finals,C
-iG,PE,9/7/2013,2#0,Season 3 China Regional Finals,C
+OMG,iG,9/7/2013#1,2#0,Season 3 China Regional Finals,C
+Royal,PE,9/7/2013#2,2#0,Season 3 China Regional Finals,C
+iG,PE,9/7/2013#3,2#0,Season 3 China Regional Finals,C
 SKT T1,KT Bullets,9/7/2013,3#1,Season 3 Korea Regional Finals,K
-OMG,Royal,9/8/2013,1#3,Season 3 China Regional Finals,C
-OMG,Royal,9/8/2013,2#1,Season 3 China Regional Finals,C
-Royal,iG,9/8/2013,2#1,Season 3 China Regional Finals,C
+OMG,Royal,9/8/2013#4,1#3,Season 3 China Regional Finals,C
+OMG,Royal,9/8/2013#6,2#1,Season 3 China Regional Finals,C
+Royal,iG,9/8/2013#5,2#1,Season 3 China Regional Finals,C
 GG.EU,TSM,9/15/2013,0#1,Season 3 World Championship,I
 Mineski,Fnatic,9/15/2013,0#1,Season 3 World Championship,I
 TSM,OMG,9/15/2013,0#1,Season 3 World Championship,I
@@ -1244,10 +1244,10 @@ CLG,TT,11/23/2013,2#0,IEM Season 8 Cologne,I
 NiP,TCM,11/23/2013,2#1,IEM Season 8 Cologne,I
 Stealths,Falcons,11/23/2013,1#1,OGN Winter 2013-2014,K
 OMG,PE,11/24/2013,2#3,LPL Summer 2013 Playoffs,C
-C9,Gambit,11/24/2013,0#2,IEM Season 8 Cologne,I
-NiP,CW,11/24/2013,0#2,IEM Season 8 Cologne,I
-Gambit,Fnatic,11/24/2013,2#0,IEM Season 8 Cologne,I
-Fnatic,CLG,11/24/2013,2#1,IEM Season 8 Cologne,I
+C9,Gambit,11/24/2013#1,0#2,IEM Season 8 Cologne,I
+NiP,CW,11/24/2013#3,0#2,IEM Season 8 Cologne,I
+Gambit,Fnatic,11/24/2013#4,2#0,IEM Season 8 Cologne,I
+Fnatic,CLG,11/24/2013#2,2#1,IEM Season 8 Cologne,I
 IM,OP,11/26/2013,2#0,NLB Winter 2013-2014 Gold,K
 TPA,iFin,11/27/2013,1#0,GPL Winter 2014,A
 SAJ,KLH,11/27/2013,1#0,GPL Winter 2014,A
@@ -1300,15 +1300,15 @@ SAJ,Mineski,11/30/2013,1#0,GPL Winter 2014,A
 SGS,Full Louis,11/30/2013,1#0,GPL Winter 2014,A
 iG,TPS,11/30/2013,2#0,IEM Season 7 Singapore,I
 CJ Frost,SAJ,11/30/2013,2#0,IEM Season 7 Singapore,I
-Lyon,CJ Blaze,11/30/2013,0#2,WCG 2013,I
-Lyon,RED,11/30/2013,2#0,WCG 2013,I
-WE,yoe.FW,11/30/2013,2#0,WCG 2013,I
-CJ Blaze,DP,11/30/2013,2#0,WCG 2013,I
-OMG,EP.HK,11/30/2013,2#0,WCG 2013,I
+Lyon,CJ Blaze,11/30/2013#5,0#2,WCG 2013,I
+Lyon,RED,11/30/2013#1,2#0,WCG 2013,I
+WE,yoe.FW,11/30/2013#2,2#0,WCG 2013,I
+CJ Blaze,DP,11/30/2013#3,2#0,WCG 2013,I
+OMG,EP.HK,11/30/2013#4,2#0,WCG 2013,I
 iG,CJ Frost,12/1/2013,2#0,IEM Season 7 Singapore,I
-Lyon,WE,12/1/2013,0#2,WCG 2013,I
-CJ Blaze,OMG,12/1/2013,2#0,WCG 2013,I
-OMG,WE,12/1/2013,2#1,WCG 2013,I
+Lyon,WE,12/1/2013#2,0#2,WCG 2013,I
+CJ Blaze,OMG,12/1/2013#3,2#0,WCG 2013,I
+OMG,WE,12/1/2013#1,2#1,WCG 2013,I
 Blast,????,12/3/2013,2#0,NLB Winter 2013-2014 Gold,K
 BKT,SF5,12/4/2013,0#1,GPL Winter 2014,A
 TPA,Full Louis,12/4/2013,3#0,GPL Winter 2014,A
@@ -1327,15 +1327,15 @@ Mook,Prime.O,12/12/2013,2#1,NLB Winter 2013-2014 Gold,K
 Mineski,TPS,12/13/2013,0#3,GPL Winter 2014,A
 NB,CJ Blaze,12/13/2013,0#2,OGN Winter 2013-2014,K
 IM 2,KT B,12/13/2013,0#2,OGN Winter 2013-2014,K
-OMG,iG,12/14/2013,0#1,2013 GALAXY eSports Carnival,C
-WE Acad,Royal,12/14/2013,0#1,2013 GALAXY eSports Carnival,C
-iG,Royal,12/14/2013,1#0,2013 GALAXY eSports Carnival,C
+OMG,iG,12/14/2013#1,0#1,2013 GALAXY eSports Carnival,C
+WE Acad,Royal,12/14/2013#2,0#1,2013 GALAXY eSports Carnival,C
+iG,Royal,12/14/2013#3,1#0,2013 GALAXY eSports Carnival,C
 AW Arena,NJWS,12/14/2013,0#2,OGN Winter 2013-2014,K
 Storm,CJ Frost,12/14/2013,1#1,OGN Winter 2013-2014,K
 d,A,12/14/2013,0#2,Battle of the Atlantic 2013,I
-Royal,OMG,12/15/2013,0#2,2013 GALAXY eSports Carnival,C
-OMG,WE Acad,12/15/2013,1#0,2013 GALAXY eSports Carnival,C
-iG,OMG,12/15/2013,1#2,2013 GALAXY eSports Carnival,C
+Royal,OMG,12/15/2013#5,0#2,2013 GALAXY eSports Carnival,C
+OMG,WE Acad,12/15/2013#4,1#0,2013 GALAXY eSports Carnival,C
+iG,OMG,12/15/2013#6,1#2,2013 GALAXY eSports Carnival,C
 TSM,LD2,12/15/2013,2#0,Battle of the Atlantic 2013,I
 Blast,MSH,12/17/2013,2#0,NLB Winter 2013-2014 Gold,K
 TPA,SAJ,12/18/2013,3#2,GPL Winter 2014,A
@@ -1366,9 +1366,9 @@ KT Bullets,CJ Blaze,12/27/2013,3#1,OGN Winter 2013-2014,K
 YG,LGD,12/28/2013,2#0,G-League 2013,C
 iG,Gamefy,12/28/2013,2#0,G-League 2013,C
 Blast,Stealths,12/28/2013,2#1,NLB Winter 2013-2014 Platinum,K
-CC,LGD,12/29/2013,1#2,G-League 2013,C
-WE Acad,YG,12/29/2013,2#0,G-League 2013,C
-YG,LGD,12/29/2013,2#0,G-League 2013,C
+CC,LGD,12/29/2013#2,1#2,G-League 2013,C
+WE Acad,YG,12/29/2013#1,2#0,G-League 2013,C
+YG,LGD,12/29/2013#3,2#0,G-League 2013,C
 WE,WE Acad,12/30/2013,0#2,G-League 2013,C
 iG,YG,12/30/2013,1#2,G-League 2013,C
 NJBS,IM,12/31/2013,2#0,NLB Winter 2013-2014 Platinum,K
@@ -1665,13 +1665,13 @@ BKT,iS,3/13/2014,0#1,GPL Spring 2014,A
 SAJ,TPS,3/13/2014,0#1,GPL Spring 2014,A
 NJBS,Falcons,3/14/2014,2#0,OGN Spring 2014,K
 CJ Blaze,IM 1,3/14/2014,2#0,OGN Spring 2014,K
-iG,Fnatic,3/14/2014,1#0,IEM Season 8 World Championship,I
-KT Bullets,M,3/14/2014,1#0,IEM Season 8 World Championship,I
-iG,KT Bullets,3/14/2014,0#1,IEM Season 8 World Championship,I
-Fnatic,M,3/14/2014,1#0,IEM Season 8 World Championship,I
-Gambit,TPA,3/14/2014,0#1,IEM Season 8 World Championship,I
-C9,WE,3/14/2014,1#0,IEM Season 8 World Championship,I
-TPA,C9,3/14/2014,0#1,IEM Season 8 World Championship,I
+iG,Fnatic,3/14/2014#1,1#0,IEM Season 8 World Championship,I
+KT Bullets,M,3/14/2014#2,1#0,IEM Season 8 World Championship,I
+iG,KT Bullets,3/14/2014#3,0#1,IEM Season 8 World Championship,I
+Fnatic,M,3/14/2014#4,1#0,IEM Season 8 World Championship,I
+Gambit,TPA,3/14/2014#5,0#1,IEM Season 8 World Championship,I
+C9,WE,3/14/2014#6,1#0,IEM Season 8 World Championship,I
+TPA,C9,3/14/2014#7,0#1,IEM Season 8 World Championship,I
 SAJ,ahq,3/14/2014,1#0,GPL Spring 2014,A
 TPS,IPT,3/14/2014,1#0,GPL Spring 2014,A
 SGS,MLE,3/14/2014,0#1,GPL Spring 2014,A
@@ -1680,11 +1680,11 @@ PE,EDG,3/14/2014,0#2,LPL Spring 2014,C
 OMG,EP.HK,3/14/2014,2#0,LPL Spring 2014,C
 Prime.O,KT Arrows,3/15/2014,0#2,OGN Spring 2014,K
 SG Ozone,IM 1,3/15/2014,2#0,OGN Spring 2014,K
-iG,Fnatic,3/15/2014,0#1,IEM Season 8 World Championship,I
-Gambit,WE,3/15/2014,1#0,IEM Season 8 World Championship,I
-TPA,Gambit,3/15/2014,0#1,IEM Season 8 World Championship,I
-C9,Fnatic,3/15/2014,1#2,IEM Season 8 World Championship,I
-KT Bullets,Gambit,3/15/2014,2#0,IEM Season 8 World Championship,I
+iG,Fnatic,3/15/2014#1,0#1,IEM Season 8 World Championship,I
+Gambit,WE,3/15/2014#2,1#0,IEM Season 8 World Championship,I
+TPA,Gambit,3/15/2014#3,0#1,IEM Season 8 World Championship,I
+C9,Fnatic,3/15/2014#4,1#2,IEM Season 8 World Championship,I
+KT Bullets,Gambit,3/15/2014#5,2#0,IEM Season 8 World Championship,I
 Royal,LGD,3/15/2014,0#2,LPL Spring 2014,C
 OMG,EDG,3/15/2014,2#0,LPL Spring 2014,C
 KT Bullets,Fnatic,3/16/2014,3#0,IEM Season 8 World Championship,I
@@ -1769,9 +1769,9 @@ MVP O,HGD,6/26/2013,2#1,AMD INVEN GamExperience 2013,K
 Blast,SKT T1 2,6/26/2013,0#2,AMD INVEN GamExperience 2013,K
 NJWS,VTG.M,6/28/2013,2#1,AMD INVEN GamExperience 2013,K
 IM 2,MVP O,6/28/2013,0#2,AMD INVEN GamExperience 2013,K
-MVP Blue,NJWS,6/29/2013,1#2,AMD INVEN GamExperience 2013,K
-SKT T1 2,MVP O,6/29/2013,0#2,AMD INVEN GamExperience 2013,K
-NJWS,MVP O,6/29/2013,1#2,AMD INVEN GamExperience 2013,K
+MVP Blue,NJWS,6/29/2013#1,1#2,AMD INVEN GamExperience 2013,K
+SKT T1 2,MVP O,6/29/2013#2,0#2,AMD INVEN GamExperience 2013,K
+NJWS,MVP O,6/29/2013#3,1#2,AMD INVEN GamExperience 2013,K
 Gambit,A,3/20/2014,0#1,EU LCS Spring 2014,E
 SHC,M,3/20/2014,1#0,EU LCS Spring 2014,E
 ROCCAT,Fnatic,3/20/2014,0#1,EU LCS Spring 2014,E

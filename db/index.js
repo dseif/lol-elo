@@ -107,9 +107,14 @@ exports.migrate = function () {
                         matchData = {};
 
                     if (arr.length > 1) {
+                        var parts = arr[2].split('#')
+                        console.log (parts)
                         matchData.teams = [arr[0], arr[1]];
                         matchData.teamsLower = [arr[0].toLowerCase(), arr[1].toLowerCase()];
-                        matchData.date = new Date(arr[2]);
+                        matchData.date = new Date(parts[0]);
+                        if (parts[1]) {
+                            matchData.date.setHours(parts[1])
+                        }
                         matchData.result = arr[3].split('#');
                         matchData.eventName = arr[4];
                         matchData.region = arr[5];
