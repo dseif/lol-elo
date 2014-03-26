@@ -1,60 +1,26 @@
 extends layout
 block content
-	include header
-	div#wrapper
-		h1
-			if teamNames
-				=teamNames[0]
-			if eventId
-				=eventId
-		table
-				each result, i in results
-					tr
-						if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-							td
-								a(href= '/teams/' + result.teams[1]) #{result.teams[1]}
-							td=' vs. '
-							td
-								a(href= '/teams/' + result.teams[0]) #{result.teams[0]} 
-						else
-							td=Math.round(result.eloBefore[0])
-							td
-								a(href= '/teams/' + result.teams[0]) #{result.teams[0]}
-							td=' vs. '
-							td=Math.round(result.eloBefore[1])
-							td
-								a(href= '/teams/' + result.teams[1]) #{result.teams[1]} 						
-						if (teamNames && teamNames.indexOf(result.teams[0]) !== -1)
-							if (result.result[0] > result.result[1]) 
-								td= 'WIN'
-							else if (result.result[0] < result.result[1])
-								td= 'LOSS'
-							else
-								td= 'TIE'
-						else if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-							if (result.result[0] < result.result[1]) 
-								td= 'WIN'
-							else if (result.result[0] > result.result[1])
-								td= 'LOSS'
-							else 
-								td= 'TIE'
-						td
-							if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-								=result.result[1] + '-' + result.result[0]
-							else
-								=result.result[0] + '-' + result.result[1]
-						td #{result.date.toDateString()}
-						td
-							a(href= '/events/' + result.eventName) #{result.eventName}
-						td
-							case result.region[0]
-								when 'N'
-									='Na'
-								when 'I'
-									='Int'
-								when 'E'
-									='Eu'
-								when 'A'
-									='As'
-								when 'K'
-									='Kr'
+	div#screencontainer
+		div#content
+			include header
+			div#wrapper
+				div#leftcontainer
+					div#matchlist.contentlarge
+						div.contentlargeheader
+							h1 RESULTS
+						h1
+							if teamNames
+								=teamNames[0]
+							if eventId
+								=eventId
+						include resultlist
+				div#rightcontainer
+					div#upcomingmatches
+						div.contentlargeheader
+							h1 MODULE 1
+					div#upcomingmatches
+						div.contentlargeheader
+							h1 MODULE 2
+					div#ad1(style='background-image:url("/img/v1.png")')
+	include footer
+

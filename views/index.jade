@@ -1,80 +1,64 @@
 extends layout
 block content
-	include header
-	div#wrapper
-		div#teamlist.contentlarge
-			div.contentlargeheader
-				h1 CURRENT RANKINGS
-			table
-				tr
-					th='RANK'
-					th.teamname='NAME'
-					th='ELO'
-					th='DELTA'
-					th='REGION'
-					th='COL SIX'
-				each team, i in teams
-					tr
-						td.blue=i+1
-						td.teamname
-							a(href= '/teams/' + team.name) #{team.name}
-						td= Math.round(team.elo)
-						td.green='+1'
-						td='Kr'
-						td
-		div#teamlist.contentlarge
-			div#feature
-		div#teamlist.contentlarge
-			div.contentlargeheader
-				h1 RECENT MATCHES
-			table
-				each result, i in results
-					tr
-						if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-							td
-								a(href= '/teams/' + result.teams[1]) #{result.teams[1]}
-							td=' vs. '
-							td
-								a(href= '/teams/' + result.teams[0]) #{result.teams[0]} 
-						else
-							td=Math.round(result.eloBefore[0])
-							td
-								a(href= '/teams/' + result.teams[0]) #{result.teams[0]}
-							td=' vs. '
-							td=Math.round(result.eloBefore[1])
-							td
-								a(href= '/teams/' + result.teams[1]) #{result.teams[1]} 						
-						if (teamNames && teamNames.indexOf(result.teams[0]) !== -1)
-							if (result.result[0] > result.result[1]) 
-								td= 'WIN'
-							else if (result.result[0] < result.result[1])
-								td= 'LOSS'
-							else
-								td= 'TIE'
-						else if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-							if (result.result[0] < result.result[1]) 
-								td= 'WIN'
-							else if (result.result[0] > result.result[1])
-								td= 'LOSS'
-							else 
-								td= 'TIE'
-						td
-							if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-								=result.result[1] + '-' + result.result[0]
-							else
-								=result.result[0] + '-' + result.result[1]
-						td #{result.date.toDateString()}
-						td
-							a(href= '/events/' + result.eventName) #{result.eventName}
-						td
-							case result.region[0]
-								when 'N'
-									='Na'
-								when 'I'
-									='Int'
-								when 'E'
-									='Eu'
-								when 'A'
-									='As'
-								when 'K'
-									='Kr'
+	div#screencontainer
+		div#content
+			include header
+			div#wrapper
+				div#leftcontainer
+					div#newsheader.contentlarge
+						div#feature(style='background-image:url("/img/ft1.png")')
+						div#featureright(style='background-image:url("/img/ftr1.png")')
+						div#featureright(style='background-image:url("/img/ftr2.png")')
+					include teamlist
+					div#spotlightmatches.contentlarge
+						div.contentlargeheader
+							h1 MATCH SPOTLIGHT
+						div#spotlight
+							h1.blue MONDAY
+							h2 3/24
+							h3 ROCCAT
+								img(src= '/img/lgb_sk.png')
+							h4.gold ELO: 1240
+							h3 TSM
+								img(src= '/img/lgb_ht.png')
+							h4.gold ELO: 1440
+							p EU SPRING SPLIT WEEK 5
+						div#spotlight
+							h1.blue TUESDAY
+							h2 10/1
+							h3 ROCCAT
+								img(src= '/img/lgb_sk.png')
+							h4.gold ELO: 1240
+							h3 TSM
+								img(src= '/img/lgb_ht.png')
+							h4.gold ELO: 1440
+							p LPL ROUND ROBIN
+						div#spotlight
+							h1.blue WEDNESDAY
+							h2 3/28
+							h3 ROCCAT
+								img(src= '/img/lgb_sk.png')
+							h4.gold ELO: 1240
+							h3 TSM
+								img(src= '/img/lgb_ht.png')
+							h4.gold ELO: 1440
+							p EU SPRING SPLIT WEEK 5
+					div#matchlist.contentlarge
+						div.contentlargeheader
+							h1 RECENT MATCHES
+						include resultlist
+					div#matchlist.contentlarge
+						div.contentlargeheader
+							h1 UPCOMING MATCHES
+				div#rightcontainer
+					div#upcomingmatches
+						div.contentlargeheader
+							h1 MODULE 1
+					div#upcomingmatches
+						div.contentlargeheader
+							h1 MODULE 2
+					div#ad1(style='background-image:url("/img/v1.png")')
+	include footer
+
+
+

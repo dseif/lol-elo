@@ -1,14 +1,17 @@
 extends layout
 block content
-    include header
-    div#wrapper
-        table
-            each team, i in teams 
-                tr
-                    td= team.games
-                    td
-                        a(href= '/teams/' + team.name) #{team.name}
-                    td= Math.round(team.elo)
-
-                    each alias in team.aliases
-                        td= alias.name
+    div#screencontainer
+        div#content
+            include header
+            div#wrapper
+                    div#leftcontainer
+                        include teamlist
+                    div#rightcontainer
+                        div#upcomingmatches
+                            div.contentlargeheader
+                                h1 MODULE 1
+                        div#upcomingmatches
+                            div.contentlargeheader
+                                h1 MODULE 2
+                        div#ad1(style='background-image:url("/img/v1.png")')
+    include footer

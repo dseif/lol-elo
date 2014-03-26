@@ -1,0 +1,25 @@
+div#teamlist.contentlarge
+	div.contentlargeheader
+		h1 CURRENT RANKINGS
+	table
+		tr
+			th
+			th
+			th
+			th
+			th='RATING'
+			th='REGION'
+			th='GAMES'
+		each team, i in teams
+			tr
+				td(style="width:40px;").green='+1'
+				td(style="width:30px;").blue=i+1	
+				td(style="width:38px;")
+					a(href= '/teams/' + team.name)
+						img(src= '/img/lgs/lgs-' + team.name.replace(/ /g, "-") + '.png')
+				td.teamname
+					a(href= '/teams/' + team.name) #{team.name}
+				td(style="width: 50px;")= Math.round(team.elo)
+				td 
+					img(src= '/img/korea.png')
+				td.grey= team.games

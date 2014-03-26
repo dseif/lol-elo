@@ -82,6 +82,46 @@ exports.teammatches = function(db) {
     };
 };
 
+exports.teamresults = function(db) {
+    return function (req, res) {
+        var teamName = req.params.id;
+        db.team.find({
+            $or: [
+                {
+                    name: teamName
+                },
+                {
+                    aliases: {
+                        $elemMatch: {
+                            name: teamName
+                        }
+                    }
+                }
+            ]
+        }, function (err, teams) {
+            var names = [];
+            var namesRender = []; 
+            teams[0].aliases.forEach(function (team) {
+                names.push(team.name.toLowerCase());
+                namesRender.push(team.name);
+            });
+            names.push(teams[0].name.toLowerCase());
+            namesRender.push(teams[0].name);
+            console.log('wat', names, teams);
+            db.result.findbydate({
+                teamsLower: {
+                    $in: names
+                }
+            }, function (err, results) {
+                res.render('teampage', {
+                    'results': results,
+                    'teamNames' : namesRender
+                });
+            });
+        });
+    };
+};
+
 exports.eventmatches = function(db) {
     return function (req, res) {
         var eventId = req.params.id;

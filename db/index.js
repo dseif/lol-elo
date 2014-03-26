@@ -154,14 +154,14 @@ exports.calcresults = function (callback) {
                 var t1k = 32,
                 t2k = 32;
                     
-                if (team1Games < 10) {
+                if (team1Games < 20) {
                         t1k = t1k*Math.pow(60/(team1Games+3), 1/2)
                 }
-                if (m.region[0] === "I") {
+                if (m.region[0] === "I" ) {
                      t1k = t1k*2;
                 }
 
-                if (team2Games < 10) {
+                if (team2Games < 20) {
                         t2k = t2k*Math.pow(60/(team2Games+3), 1/2)
                 }
                 if (m.region[0] === "I") {
@@ -174,6 +174,7 @@ exports.calcresults = function (callback) {
                     e2 = r2 / (r1 + r2);
 
                 if (team1Wins>0 && (team1Wins < team2Wins || team2Wins === 0)) {
+
                     team1Elo = team1Elo +t1k * (1 - e1)
                     team2Elo = team2Elo + t2k *(0 - e2);
                     team1Wins--;
@@ -183,6 +184,7 @@ exports.calcresults = function (callback) {
                 }
 
                 else if (team2Wins>0) {
+
                     team1Elo = team1Elo + t1k * (0 - e1)
                     team2Elo = team2Elo + t2k *(1 - e2);
                     team2Wins--;
@@ -193,7 +195,7 @@ exports.calcresults = function (callback) {
                 else {
                     callback3([team1Elo, team2Elo]);
                 }
-            }
+            };
 
             var team1Elo,
             team2Elo,

@@ -1,7 +1,8 @@
+
 body {
  	padding: 0;
  	margin: 0;
- 	font: 15px "Raleway", sans-serif;
+ 	font: 15px "AvantGarde Bk Bt", sans-serif;
 	background-color: #0B0B0B;
  	color: #E5E5E5;
 }
@@ -11,12 +12,49 @@ a {
 	color: #E5E5E5;
 }
 
+a:hover
+{
+	color: #018FFD;
+	text-decoration: underline;
+
+}
+
+h1, h2, h3, h4
+
+{
+	margin: 0;
+	padding: 0;
+	color: #F8F8F8;
+}
+
+ul
+{
+	margin: 0;
+}
+
+.contentlargeheader h1 {
+	font-size: 16px;
+	line-height: 30px; 
+	font-weight:500;
+	padding-left: 6px;
+	margin: 0;
+}
+
+
 #topmenu
 	{
 		height:35px;
 		background-color: #000000;
-
 	}
+
+
+html, body, #screencontainer { height: 100%; }
+body > #screencontainer { height: auto; min-height: 100%; }
+
+#content
+{
+	padding-bottom: 51px;
+}
 
 #wrapper
 	{
@@ -34,8 +72,33 @@ a {
 		
 	}
 
+#footer
+	{
+		clear:both;
+		position: relative;
+		z-index: 10;
+		height: 51px;
+		margin-top: -51px;
+		background-image:url("/img/ftbg.png");
+		background-repeat: repeat-x;
+		
+	}
 
+#footer ul
+{
+	float:right;
+}
 
+#footer img
+{
+	padding-left: 40px;
+}
+
+#footer ul li { 
+	display: inline;
+	padding-right: 20px;
+	line-height: 51px;
+}
 #menu
 	{
 		height: 47px;
@@ -48,7 +111,7 @@ a {
 	{
 		list-style-type: none;
 		font-size: 20px;
-		padding-right: 470px;
+		padding-right: 520px;
 		padding-left: 6px;
 		text-align: center;
 		margin: 0 0 ;
@@ -66,15 +129,35 @@ a {
 }
 
 #menu ul li a:hover {
-	color: white;
+	 color: #018FFD;
 	text-decoration: underline;
+}
+#screencontainer
+{
+	min-height:100%;
+	width: 100%;	
+}
+
+#leftcontainer
+{
+	margin-top: 21px;
+	float: left;
+	width:760px;
+	padding-bottom:51px;
+
+}
+#rightcontainer
+{
+	margin-top: 21px;
+	float: right;
+	width: 160px;
+	margin-right:50px;
+
 }
 
 .contentlarge
 {
-	margin-top: 21px;
-	float: left;
-	width: 760px;
+	padding-bottom: 21px;
 }
 
 .contentlargeheader
@@ -84,20 +167,25 @@ a {
 	color: white;
 
 }
-.contentlargeheader h1 {
-	font-size: 16px;
-	line-height: 30px; 
-	padding-left: 6px;
-	font-weight:500;
-	margin: 0;
+
+#newsheader
+{
+	width: 100%;
+	height: 300px;
+	
+}
+#upcomingmatches
+{
+	background-color: #151515;
+	margin-bottom: 21px;
+	height: 150px;
 }
 
-
-#teamlist table
+.contentlarge table
 {
 	width: 100%;
 }
-#teamlist th
+th
 {
 
 	color: #B38900;
@@ -109,42 +197,158 @@ td
 {
 	text-align: center;
 }
-#teamlist .teamname
+.teamname
 {
 	text-align: left;
 	padding-left: 20px;
 }
-
-#teamlist .teamname a:hover
-{
-	color: #018FFD;
-	text-decoration: underline;
-
-}
-#teamlist .teamname a
+table a
 {
 	text-decoration:none;
 
 }
-#teamlist .blue
+table
+{
+	border-collapse: collapse;
+}
+
+.red
+{
+	color: #841400;
+}
+
+.blue
 {
 	color: #018FFD;
 }
 
-#teamlist .green
+.green
 {
 	color: #1A8302;
 }
 
+.gold
+{
+	color: #B48B00;
+}
 
-tr:nth-child(even) td{
+.grey
+{
+	color:#A4A4A4;
+}
+
+.lb
+{
+	color: #88CBFF;
+}
+
+#teamlist tr:nth-child(even) td{
 	background-color: #131313;
 }
 
 #feature
 {
-	width: 100%;
+	float: left;
 	height:299px;
 	width:460px;
-	background-image:url("/img/ft1.png");
+	background-repeat: no-repeat;
+}
+
+#featureright
+{
+	float: right;
+	height:139px;
+	width:281px;
+	background-repeat: no-repeat;
+	padding-top:20px;
+}
+
+#spotlightmatches
+{
+	height: 300px;
+
+}
+
+#spotlight
+{
+	float:left;
+	width: 220px;
+	height: 260px;
+	margin-top: 10px;
+	margin-right: 20px;
+	background-image:url("/img/hotbg.png");
+}
+
+#spotlight h1, h2, h3, h4, p
+{
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+#spotlight h1
+{
+	font-size: 14px;
+	padding-top: 10px;
+}
+
+#spotlight h2
+{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+#spotlight h3
+{
+	font-size: 22px;
+	padding-top: 28px;
+}
+
+#spotlight img
+{
+	float: right;
+	padding-right: 15px;
+}
+
+#spotlight p
+{
+	padding-top: 10px;
+	font-size: 13px;
+	color:#A4A4A4
+}
+#ad1
+{
+	border-style: solid;
+	border-color: #151515;
+	border-width: 1px;
+	height:572px;
+	background-repeat: no-repeat;
+}
+
+.bold
+{
+	font-weight: 700;
+}
+
+#matchlist table
+{
+	border-collapse: separate;
+	border-spacing: 0 6px;
+}
+#matchlist tr
+{
+	background-color: #131313;
+
+}
+#matchlist th
+{
+	background-color: #0B0B0B;
+}
+
+#matchlist td
+{
+	padding: 0;
+	margin: 0;
+	height:47px;
+	background-image:url("/img/mtablebg.png");
 }
