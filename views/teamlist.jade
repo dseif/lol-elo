@@ -16,9 +16,9 @@ mixin teamlist
 					td(style="width:40px;").green='+1'
 					td(style="width:30px;").blue=i+1	
 					td(style="width:38px;")
-						if (team.logo)
+						if (team.logos[0])
 							a(href= '/teams/' + team.name)
-								img(src= '/img/lgs/lgs-'+ team.logo + '.png')
+								img(src= '/img/lgs/lgs-'+ team.logos[0] + '.png')
 					td.teamname
 						a(href= '/teams/' + team.name) #{team.name}
 					td(style="width: 50px;")= Math.round(team.elo)

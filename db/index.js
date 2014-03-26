@@ -52,10 +52,12 @@ exports.migrate = function () {
         teamData.name = teamName;
         teamData.elo = 1200;
         teamData.aliases = [];
+        teamData.logos = [];
         fs.exists('public/img/lgs/lgs-' + teamName.replace(/ /g, "-") + '.png', function(exists) {
             if (exists) {
-                teamData.logo = teamName.replace(/ /g, "-");
+                teamData.logos[0] = teamName.replace(/ /g, "-");
             }
+            fs.exists('public/img/lgs/lgs-' + teamName.replace(/ /g, "-") + '.png', function(exists2) {if (exists){teamData.logos[1] =teamName.replace(/ /g, "-");}});
             teams[teamName].forEach(function (name) {
                 teamData.aliases.push({
                 name: name,
