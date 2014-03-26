@@ -30,7 +30,7 @@ db.setup(function () {
 	app.get('/teams', routes.teams(db));
 	app.get('/results', routes.results(db));
 	app.get('/teams/:id', routes.teamresults(db));
-	app.get('/events/:id', routes.eventmatches(db));
+	app.get('/events/:id', routes.eventresults(db));
 });
 
 http.createServer(app).listen(app.get('port'), function () {

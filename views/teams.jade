@@ -1,11 +1,14 @@
+include header
+include footer
+include teamlist
 extends layout
 block content
     div#screencontainer
         div#content
-            include header
+            +header()
             div#wrapper
                     div#leftcontainer
-                        include teamlist
+                        +teamlist(teams)
                     div#rightcontainer
                         div#upcomingmatches
                             div.contentlargeheader
@@ -14,4 +17,4 @@ block content
                             div.contentlargeheader
                                 h1 MODULE 2
                         div#ad1(style='background-image:url("/img/v1.png")')
-    include footer
+    +footer()

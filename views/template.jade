@@ -1,6 +1,6 @@
 include header
 include footer
-include matchlist
+
 extends layout
 block content
 	div#screencontainer
@@ -8,15 +8,6 @@ block content
 			+header()
 			div#wrapper
 				div#leftcontainer
-					div#matchlist.contentlarge
-						div.contentlargeheader
-							h1 RESULTS
-						h1
-							if teamNames
-								=teamNames[0]
-							if eventId
-								=eventId
-						+matchlist(results)
 				div#rightcontainer
 					div#upcomingmatches
 						div.contentlargeheader
@@ -26,4 +17,3 @@ block content
 							h1 MODULE 2
 					div#ad1(style='background-image:url("/img/v1.png")')
 	+footer()
-

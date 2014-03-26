@@ -1,22 +1,61 @@
+include header
+include footer
+include teamlist
+include matchlist
+
 extends layout
 block content
 	div#screencontainer
 		div#content
-			include header
+			+header()
 			div#wrapper
 				div#leftcontainer
 					div#newsheader.contentlarge
 						div#feature(style='background-image:url("/img/ft1.png")')
 						div#featureright(style='background-image:url("/img/ftr1.png")')
 						div#featureright(style='background-image:url("/img/ftr2.png")')
-					include teamlist
+					+teamlist()
+					div#spotlightmatches.contentlarge
+						div.contentlargeheader
+							h1 MATCH SPOTLIGHT
+						div#spotlight
+							h1.blue MONDAY
+							h2 3/24
+							h3 ROCCAT
+								img(src= '/img/lgb_sk.png')
+							h4.gold ELO: 1240
+							h3 TSM
+								img(src= '/img/lgb_ht.png')
+							h4.gold ELO: 1440
+							p EU SPRING SPLIT WEEK 5
+						div#spotlight
+							h1.blue TUESDAY
+							h2 10/1
+							h3 ROCCAT
+								img(src= '/img/lgb_sk.png')
+							h4.gold ELO: 1240
+							h3 TSM
+								img(src= '/img/lgb_ht.png')
+							h4.gold ELO: 1440
+							p LPL ROUND ROBIN
+						div#spotlight
+							h1.blue WEDNESDAY
+							h2 3/28
+							h3 ROCCAT
+								img(src= '/img/lgb_sk.png')
+							h4.gold ELO: 1240
+							h3 TSM
+								img(src= '/img/lgb_ht.png')
+							h4.gold ELO: 1440
+							p EU SPRING SPLIT WEEK 5
 					div#matchlist.contentlarge
 						div.contentlargeheader
 							h1 RECENT MATCHES
-						include resultlist
+						+matchlist(results)
 					div#matchlist.contentlarge
 						div.contentlargeheader
 							h1 UPCOMING MATCHES
+						+matchlist(matches)
 				div#rightcontainer
 					div#upcomingmatches
 						div.contentlargeheader
@@ -25,7 +64,7 @@ block content
 						div.contentlargeheader
 							h1 MODULE 2
 					div#ad1(style='background-image:url("/img/v1.png")')
-	include footer
+	+footer()
 
 
 

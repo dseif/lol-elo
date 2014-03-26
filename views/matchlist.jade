@@ -1,0 +1,55 @@
+mixin matchlist(results)
+	table
+		each result, i in results
+			tr
+				td(style="width: 71px") 
+					span.white=result.date.toDateString().slice(4,8)
+					<br>
+					span.lb=result.date.toDateString().slice(8,10)
+				td(style="width: 184px; font-size: 12px;")
+					a.grey(href= '/events/' + result.eventName) 
+						=result.eventName.toUpperCase()
+				td(style="width: 150px; font-size: 18px;  text-align: right; font-weight: 500; padding-right: 10px; line-height: 16px;/")
+					a(href= '/teams/' + result.teams[0]) 
+							=result.teams[0].toUpperCase()
+							<br>
+							span(style=("font-size: 13px; font-weight: 500;"))
+								span.gold=Math.round(result.eloBefore[0]) + ' '
+								if ((Math.round(result.eloAfter[0]) - Math.round(result.eloBefore[0])) !== 0)
+									if (result.eloAfter[0] >= result.eloBefore[0])
+										span.green='+'+(Math.round(result.eloAfter[0]) - Math.round(result.eloBefore[0]))
+									else
+										span.red=Math.round(result.eloAfter[0]) - Math.round(result.eloBefore[0])
+				td(style="width': 45px")
+					a(href= '/teams/' + result.teams[0])
+						img(src= '/img/lgb_sk.png')
+				td(style="font-size: 24px; font-weight: bold; width: 70px;")
+					if (result.result[0] === 0 && result.result[1] === 0)
+						=" vs. "
+					else
+						if (result.result[0] === 0)
+							span.grey=result.result[0]
+						else
+							=result.result[0]
+						span.grey=" - "
+						if (result.result[1] === 0)
+							span.grey=result.result[1]
+						else
+							=result.result[1]
+				td(style="width': 45px")
+					a(href= '/teams/' + result.teams[1])
+						img(src= '/img/lgb_ht.png')
+				td(style="width: 150px; font-size: 18px;  text-align: left; font-weight: 500; padding-left: 10px; line-height: 16px;")
+					a(href= '/teams/' + result.teams[0]) 
+							=result.teams[1].toUpperCase()
+							<br>
+							span(style=("font-size: 13px; font-weight: 500"))
+								span.gold=Math.round(result.eloBefore[1]) + ' '
+								if ((Math.round(result.eloAfter[0]) - Math.round(result.eloBefore[0])) !== 0)
+									if (result.eloAfter[1] >= result.eloBefore[1])
+										span.green='+'+(Math.round(result.eloAfter[1]) - Math.round(result.eloBefore[1]))
+									else
+										span.red=Math.round(result.eloAfter[1]) - Math.round(result.eloBefore[1])
+				td(style="padding-right: 20px") 
+					if (Math.round(((result.eloBefore[0]+result.eloBefore[1])-1800)/160) >= 7)
+						img(src= '/img/fire.png')

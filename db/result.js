@@ -36,6 +36,6 @@ exports.findbydate = function (query, callback) {
 		query = {};
 	}
 	Result.find(query)
-	.sort({date : 1})
+	.sort({date : -1})
 	.exec(callback);
 };

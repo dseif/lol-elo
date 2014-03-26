@@ -9,13 +9,11 @@ block content
 			div#wrapper
 				div#leftcontainer
 					div#matchlist.contentlarge
-						div.contentlargeheader
-							h1 RESULTS
 						h1
-							if teamNames
-								=teamNames[0]
 							if eventId
 								=eventId
+						div.contentlargeheader
+							h1 RESULTS
 						+matchlist(results)
 				div#rightcontainer
 					div#upcomingmatches

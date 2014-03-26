@@ -1,8 +1,11 @@
+include header
+include footer
+
 extends layout
 block content
 	div#screencontainer
 		div#content
-			include header
+			+header()
 			div#wrapper
 				div#leftcontainer
 					h1

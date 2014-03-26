@@ -56,10 +56,6 @@ exports.migrate = function () {
             if (exists) {
                 teamData.logo = teamName.replace(/ /g, "-");
             }
-            else
-            {
-                teamData.logo = 'None';    
-            }
             teams[teamName].forEach(function (name) {
                 teamData.aliases.push({
                 name: name,
