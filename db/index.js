@@ -157,6 +157,30 @@ exports.loadaliases = function () {
     });
 }
 
+exports.updateTeams = function () {
+    fs.readFile('migrations/team.csv', 'utf8', function (err, data) {
+        var regionDataArray = data.split('\n'),
+            i = regionDataArray.length,
+            j = 0;
+
+        regionDataArray.forEach(function (regionData) {
+            var data = regionData.split(',');
+            team.update({
+                name: data[0]
+            },
+            {
+                region: data[1],
+                active: !!data[2]
+            }, function () {
+                j++;
+                if (j === i) {
+                    process.exit();
+                }
+            });
+        });
+    });
+};
+
 exports.calcresults = function (callback) {
 
     match.findbydate({}, function (err, data) {

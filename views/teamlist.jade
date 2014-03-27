@@ -23,5 +23,5 @@ mixin teamlist
 						a(href= '/teams/' + team.name) #{team.name}
 					td(style="width: 50px;")= Math.round(team.elo)
 					td 
-						img(src= '/img/korea.png')
+						img(src= '/img/' + team.region + '.png')
 					td.grey= team.games

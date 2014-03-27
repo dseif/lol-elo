@@ -10,8 +10,16 @@ exports.setup = function () {
 			date: Date
 		}],
 		elo: Number,
+		region: {
+			type: String,
+			default: 'unknown'
+		},
+		active: Boolean,
 		logos: [String],
-		games: {type: Number, default: 0 }
+		games: {
+			type: Number,
+			default: 0
+		}
 	});
 	Team = mongoose.model('Team', teamSchema);
 };
@@ -19,6 +27,10 @@ exports.setup = function () {
 exports.insert = function (data, callback) {
  	var team = new Team(data);
 	team.save(callback || function () {});
+};
+
+exports.update = function(query, data, callback) {
+	Team.update(query, data, callback);
 };
 
 exports.find = function (query, callback) {
