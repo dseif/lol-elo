@@ -63,13 +63,9 @@ block content
 							var graphx = "#{graphx}".split(',');
 							for (var i = 0; i < graphx.length; i++)
 								{
-									console.log("ping");
 									graphdata.push({x : new Date(graphx[i]), y : graphy[i]});
-									console.log("pong");
 								}
-							console.log(graphy);
-							console.log(graphx);
-							console.log(graphdata)
+
 								return [
 									{
 										values : graphdata,
