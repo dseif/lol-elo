@@ -8,6 +8,8 @@ nv.addGraph(function() {
                 .showYAxis(true)        //Show the y-axis
                 .showXAxis(true)        //Show the x-axis
                 .forceY([1000,1900])
+                .forceX([new Date(2013,1,1), new Date()])
+                .interpolate("basis")
   ;
 
 

@@ -91,7 +91,7 @@ exports.teamresults = function(db) {
                         }
                     }
                 }
-                graphx.push(results[results.length-1].date.toDateString().slice(4));
+                graphx.push(results[results.length-1].date);
                 graphy.push(1200);
 
                 res.render('teampage', {
