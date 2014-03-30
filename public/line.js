@@ -7,15 +7,18 @@ nv.addGraph(function() {
                 .showLegend(true)       //Show the legend, allowing users to turn on/off line series.
                 .showYAxis(true)        //Show the y-axis
                 .showXAxis(true)        //Show the x-axis
-                .forceY([1000,2000]);
+                .forceY([1000,1900])
   ;
 
 
   chart.xAxis     //Chart x-axis settings
-      .tickFormat(function(d) { return d3.time.format("%b %d %Y")(new Date(d)); });
+      .tickFormat(function(d) { return d3.time.format("%b %Y")(new Date(d)); })
+      .tickPadding(10);
 
   chart.yAxis     //Chart y-axis settings
-      .tickFormat(d3.format('.02f'))
+      .tickFormat(d3.format("d"))
+      .tickPadding(10);
+
   /* Done setting the chart up? Time to render it!*/
   var myData = getData();   //You need data...
 

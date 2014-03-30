@@ -158,9 +158,10 @@ svg {
 
 
 svg text {
-  font: 12px "AvantGarde Bk Bt", sans-serif;
-  color: #E5E5E5;
-
+  font: 10px "AvantGarde Bk Bt", sans-serif;
+  stroke: #E5E5E5;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
 }
 
 svg .title {
@@ -211,7 +212,6 @@ svg .title {
 */
 .nvd3 .nv-axis {
   pointer-events:none;
-
 }
 
 .nvd3 .nv-axis path {
@@ -364,7 +364,7 @@ svg .title {
 
 .nvd3 .nv-groups path.nv-line {
   fill: none;
-  stroke-width: 1.5px;
+  stroke-width: 2.5px;
   /*
   stroke-linecap: round;
   shape-rendering: geometricPrecision;
