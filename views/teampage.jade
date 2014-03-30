@@ -1,6 +1,5 @@
 include header
 include footer
-
 extends layout
 block content
 	div#screencontainer
@@ -8,63 +7,173 @@ block content
 			+header()
 			div#wrapper
 				div#leftcontainer
-					h1
-						if teamNames
+					div#path
+						h1
+							a(href= '/')
+								="Home"
+							=" / "
+							a(href= '/teams/')
+								="Teams"
+							=" / "
+							a(href= '/teams/' + teamNames[0])
+								=teamNames[0]
+					div.contenthugeheader.contentlarge
+						h1
 							=teamNames[0]
-						if eventId
-							=eventId
-					table
+					img.contentlarge(src= '/img/lgl/clg.png')
+					div#teamvitals.contentlarge
+							div.contentdarkheader(style="width:400px;")
+									h1
+										="VITALS"
+							table(style="float:right;")
+								tr
+									td.gold="ELO"
+									td="1250"
+								tr
+									td.gold="Current Rank"
+									td="1"
+								tr
+									td.gold="Highest Rank"
+									td="1"
+								tr
+									td.gold="Region"
+									td="CANADA"
+								tr
+									td.gold(style="vertical-align: top; background-image: none;")
+										="Acheivements"
+									td(style="background-image: none;")
+										="1250"
+										<br>
+										="asd"
+										<br>
+										="asd"
+										<br>
+
+					div#teamgraph.contentlarge
+						div.contentdarkheader.contentlarge
+							h1
+								="ELO TRENDING"
+					div#chart
+						svg(style="height:400px")
+					script(src="../line.js" type="text/javascript")
+					script.
+						function getData() {
+							graphdata = [];
+							var graphy = "#{graphy}".split(',').map(Number);
+							var graphx = "#{graphx}".split(',');
+							for (var i = 0; i < graphx.length; i++)
+								{
+									console.log("ping");
+									graphdata.push({x : new Date(graphx[i]), y : graphy[i]});
+									console.log("pong");
+								}
+							console.log(graphy);
+							console.log(graphx);
+							console.log(graphdata)
+								return [
+									{
+										values : graphdata,
+										key : "Rating",
+										color : '#0073C6',
+										area : true
+									}
+								];
+							}
+					div#teammatches.contentlarge
+						div.contentdarkheader
+							h1
+								="RECENT MATCHES"
+						table
+							tr
+								th="DATE"
+								th="EVENT"
+								th
+								th="OPPOSING TEAM"
+								th="RESULT"
+								th="SCORE"
 							each result, i in results
 								tr
+									td 
+										=result.date.toDateString().slice(4)
+									td(style="width:180px")
+										a.dblue(href= '/events/' + result.eventName) 
+											=result.eventName.slice(0,20)
 									if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
-										td=Math.round(result.eloBefore[1])
+										td(style="width:25px")
+											a(href= '/teams/' + result.teams[0])
+												img(src= '/img/lgs/lgs-CJ-Blaze.png') 
 										td
-											a(href= '/teams/' + result.teams[1]) #{result.teams[1]}
-										td=' vs. '
-										td=Math.round(result.eloBefore[0])
-										td
-											a(href= '/teams/' + result.teams[0]) #{result.teams[0]} 
+											a.lb(href= '/teams/' + result.teams[0])
+												=result.teams[0]
+												span.grey 
+													=' (' +Math.round(result.eloBefore[0]) + ')'
 									else
-										td=Math.round(result.eloBefore[0])
+										td(style="width:30px")
+											a(href= '/teams/' + result.teams[1])
+												img(src= '/img/lgs/lgs-CJ-Blaze.png') 
 										td
-											a(href= '/teams/' + result.teams[0]) #{result.teams[0]}
-										td=' vs. '
-										td=Math.round(result.eloBefore[1])
-										td
-											a(href= '/teams/' + result.teams[1]) #{result.teams[1]} 						
+											a.lb(href= '/teams/' + result.teams[1]) 
+												=result.teams[1] 
+												span.grey
+													=' (' +Math.round(result.eloBefore[1]) + ')'				
 									if (teamNames && teamNames.indexOf(result.teams[0]) !== -1)
 										if (result.result[0] > result.result[1]) 
-											td= 'WIN'
+											td.green= 'WIN'
 										else if (result.result[0] < result.result[1])
-											td= 'LOSS'
+											td.red= 'LOSS'
 										else
-											td= 'TIE'
+											td.gold= 'TIE'
 									else if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
 										if (result.result[0] < result.result[1]) 
-											td= 'WIN'
+											td.green= 'WIN'
 										else if (result.result[0] > result.result[1])
-											td= 'LOSS'
+											td.red= 'LOSS'
 										else 
-											td= 'TIE'
+											td.gold= 'TIE'
 									td
 										if (teamNames && teamNames.indexOf(result.teams[1]) !== -1)
 											=result.result[1] + '-' + result.result[0]
 										else
 											=result.result[0] + '-' + result.result[1]
-									td 
-										=result.date
+					
+					div#teambio.contentlarge
+						div.contentdarkheader.contentlarge
+							h1
+								="BIO"
+						div#teambiotext
+							p
+								="I didn't watch the Curse game, so I'll ask this. Did CRS pause the game immediately after the bug happened and point it out to a ref? And was the bug reproducible? Because both of those are requirements to qualify for a rematch. SK did both these things (pause to alert an official an show it was reproducible), and were actually supposed to be offered a restart as per the rules. They were never offered one, though, so Riot made the executive decision to give it to them after the fact. I'll admit it's a little sketchy, but it's okay from the rules' standpoint."
+					div#teamlineup.contentlarge
+						div.contentdarkheader
+							h1
+								="CURRENT LINEUP"
+						table
+							tr
+								th='ALIAS'
+								th='NAME'
+								th='COUNTRY'
+								th='POSITION'
+								th='JOINED'
+								tr
 									td
-										a(href= '/events/' + result.eventName) #{result.eventName}
+										="Bjergsy Baby"
 									td
-										case result.region[0]
-											when 'N'
-												='Na'
-											when 'I'
-												='Int'
-											when 'E'
-												='Eu'
-											when 'A'
-												='As'
-											when 'K'
-												='Kr'
-	include footer
+										="Personerino X"
+									td
+										="Denmark"
+									td
+										="Mid"
+									td
+										="Jan 1 1969"
+								tr
+									td
+										="Doublelift"
+									td
+										="Mr. Pang"
+									td
+										="USA"
+									td
+										="Marksman(lol)"
+									td
+										="March 4 1969"
+	+footer()

@@ -11,6 +11,7 @@ exports.setup = function () {
 		eloBefore: [Number],
 		eloAfter: [Number],
 		games: [Number],
+		logos: [String],
 		eventName: String,
 		region: String
 	});

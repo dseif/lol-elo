@@ -14,7 +14,9 @@ exports.setup = function () {
 			type: String,
 			default: 'unknown'
 		},
-		active: Boolean,
+		active: {type : Boolean,
+			default: 1
+		},
 		logos: [String],
 		games: {
 			type: Number,
@@ -41,9 +43,9 @@ exports.find = function (query, callback) {
 	Team.find(query, callback);
 };
 
-exports.updateelo = function (team, newelo, count,  callback) {
+exports.updateelo = function (team, newelo, count, callback) {
 	Team.update({$or: [{name : team}, { aliases: { $elemMatch: { name: team } } }]}, 
-			{elo: newelo,  $inc : { games : count} }, {multi : true}, function (err, response){
+			{elo : newelo, $inc : { games : count} }, {multi : true}, function (err, response){
 		callback();
 	});
 };
@@ -63,7 +65,7 @@ exports.findvalidteams = function (query, callback) {
 		callback = query;
 		query = {};
 	}
-	Team.find({ games : { $gt: 0 } })
+	Team.find({$and: [{games : { $gt : -1 }}, {active : 1}]})
 	.sort({elo : -1})
 	.exec(callback);
 };

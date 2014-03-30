@@ -8,6 +8,16 @@ block content
             +header()
             div#wrapper
                     div#leftcontainer
+                        div#path
+                            h1
+                                a(href= '/')
+                                    ="Home"
+                                =" / "
+                                a(href= '/teams/')
+                                    ="Teams"
+                        div.contenthugeheader
+                            h1
+                                ="RANKINGS"
                         +teamlist(teams)
                     div#rightcontainer
                         div#upcomingmatches

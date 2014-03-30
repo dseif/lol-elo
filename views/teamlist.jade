@@ -1,16 +1,14 @@
 mixin teamlist
 	div#teamlist.contentlarge
-		div.contentlargeheader
-			h1 CURRENT RANKINGS
 		table
 			tr
 				th
 				th
 				th
 				th
-				th='RATING'
-				th='REGION'
-				th='GAMES'
+				th.center='RATING'
+				th.center='REGION'
+				th.center='GAMES'
 			each team, i in teams
 				tr
 					td(style="width:40px;").green='+1'
@@ -19,9 +17,11 @@ mixin teamlist
 						if (team.logos[0])
 							a(href= '/teams/' + team.name)
 								img(src= '/img/lgs/lgs-'+ team.logos[0] + '.png')
-					td.teamname
+					td.teamname(style="width:500px;")
 						a(href= '/teams/' + team.name) #{team.name}
-					td(style="width: 50px;")= Math.round(team.elo)
-					td 
-						img(src= '/img/' + team.region + '.png')
-					td.grey= team.games
+					td.center(style="width: 90px;")= Math.round(team.elo)
+					td.center(style="width:90px")
+						img(src= '/img/flags/' + team.region + '.png')
+					td.grey.center(style="width:90px")
+						=team.games
+					td(style="width:140px")

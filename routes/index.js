@@ -76,9 +76,29 @@ exports.teamresults = function(db) {
                     $in: names
                 }
             }, function (err, results) {
+                        var graphx = []; 
+                        var graphy = [];
+
+                for (var i = 0; i < results.length; i++) {
+                    if (!results[i-1] || results[i].date.setHours(0,0,0,0) !== results[i-1].date.setHours(0,0,0,0)) {
+                        graphx.push (results[i].date.toDateString().slice(4));
+                        if (names.indexOf(results[i].teamsLower[0]) === -1) {
+                            graphy.push (Math.round(results[i].eloAfter[1]));
+                        }
+                        else {
+                            graphy.push (Math.round(results[i].eloAfter[0]));
+                            console.log(Math.round(results[i].eloAfter[0]))  
+                        }
+                    }
+                }
+                graphx.push(results[results.length-1].date.toDateString().slice(4));
+                graphy.push(1200);
+
                 res.render('teampage', {
-                    'results': results,
-                    'teamNames' : namesRender
+                    'results': results.slice(0),
+                    'teamNames' : namesRender,
+                    'graphx' : graphx.reverse(),
+                    'graphy' : graphy.reverse()
                 });
             });
         });

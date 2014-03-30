@@ -19,7 +19,7 @@ a:hover
 
 }
 
-h1, h2, h3, h4
+h1, h2, h3, h4, p
 
 {
 	margin: 0;
@@ -27,8 +27,42 @@ h1, h2, h3, h4
 	color: #F8F8F8;
 }
 
+h2
+{
+	font-size: 25px;
+}
+
 ul
 {
+	margin: 0;
+}
+
+.contentdarkheader {
+	background-color: #11141B;
+	height: 30px;
+	color: white;
+
+}
+
+.contentlargeheader {
+	background-color: #0073C6;
+	height: 30px;
+	color: white;
+
+}
+
+.contenthugeheader {
+	background-color: #0073C6;
+	height: 52px;
+	color: white;
+
+}
+
+.contentdarkheader h1 {
+	font-size: 19px;
+	line-height: 30px; 
+	font-weight:500;
+	padding-left: 6px;
 	margin: 0;
 }
 
@@ -37,6 +71,14 @@ ul
 	line-height: 30px; 
 	font-weight:500;
 	padding-left: 6px;
+	margin: 0;
+}
+
+.contenthugeheader h1 {
+	font-size: 27px;
+	line-height: 52px; 
+	font-weight:700;
+	padding-left: 14px;
 	margin: 0;
 }
 
@@ -138,6 +180,7 @@ body > #screencontainer { height: auto; min-height: 100%; }
 	width: 100%;	
 }
 
+
 #leftcontainer
 {
 	margin-top: 21px;
@@ -157,16 +200,29 @@ body > #screencontainer { height: auto; min-height: 100%; }
 
 .contentlarge
 {
-	padding-bottom: 21px;
+	margin-bottom: 21px;
 }
 
-.contentlargeheader
+
+#path
 {
-	background-color: #0073C6;
-	height: 30px;
-	color: white;
-
+	padding-bottom: 11px;
 }
+
+#path h1 a, h1
+{
+	font-size: 17px;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+#path h1 a
+{
+	padding-right: 6px;
+	padding-left: 6px;
+}
+
+
 
 #newsheader
 {
@@ -185,6 +241,11 @@ body > #screencontainer { height: auto; min-height: 100%; }
 {
 	width: 100%;
 }
+
+.darkgreybg
+{
+	background-color: #11141B;
+}
 th
 {
 
@@ -193,9 +254,11 @@ th
 	font-size: 12px;
 }
 
-td
+td, th
 {
-	text-align: center;
+	text-align: left;
+	padding-left: 6px;
+	height: 30px;
 }
 .teamname
 {
@@ -211,7 +274,10 @@ table
 {
 	border-collapse: collapse;
 }
-
+.white
+{
+	color: #E5E5E5;
+}
 .red
 {
 	color: #841400;
@@ -242,10 +308,19 @@ table
 	color: #88CBFF;
 }
 
-#teamlist tr:nth-child(even) td{
+.dblue
+{
+	color: #0272C6;
+}
+
+#teamlist tr:nth-child(even), #teamlineup tr:nth-child(even),  #teammatches tr:nth-child(even) td{
 	background-color: #131313;
 }
 
+.center
+{
+	text-align: center;
+}
 #feature
 {
 	float: left;
@@ -347,8 +422,41 @@ table
 
 #matchlist td
 {
+	text-align: center;
 	padding: 0;
 	margin: 0;
 	height:47px;
 	background-image:url("/img/mtablebg.png");
+	background-repeat: repeat-x;
+}
+
+#teamvitals
+{
+	float: right;
+}
+#teamvitals table
+{
+	float:right; 
+	width:400px;
+	text-align: left;	
+
+}
+
+#teamlineup td
+{
+	text-align: left;
+}
+#teamvitals td
+
+{
+	height: 27px;
+	text-align: left;
+	background-image:url("/img/tvitalsbg.png");
+	background-repeat: repeat-x;
+}
+
+#teambiotext
+{
+	padding: 18px;
+	background-color: #131313;
 }
